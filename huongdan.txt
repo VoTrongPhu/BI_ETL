@@ -1,8 +1,0 @@
-Mọi người lưu file datasource theo đường dẫn giống máy t là D:\BI\TH\Datasource để giống các task t đã làm
-Trước khi load data, vì mọi người chưa tạo bảng trong database (tạo cũng mệt) nên mình sẽ tạo bảng trong mỗi destination: 
-ấn vào từng dataflow 
-nhấn vào destination
-chọn new để create table: 
-	đặt tên các bảng như task truncate phía trước
-	các cột phải giữ nguyên không sửa type khi bấm chữ new, riêng bảng compiled_covid_19, cột date_report sửa 		thành varchar(500)
-click qua mapping để nó tự check lại
