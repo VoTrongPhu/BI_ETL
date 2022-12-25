@@ -1,3 +1,8 @@
+-- Cài đặt Database trong SQL SERVER
++ Tạo database rỗng (name: COVID_DB)
++ Down file sql METADATA và NDS
++ Run script
+
 Mọi người chạy lần đầu tiên thì nhấn chuột phải -> disable hết mấy task truncate và task orginal type
 Lưu file datasource theo đường dẫn giống máy t là D:\BI\TH\Data để giống các task t đã làm
 Trước khi load data, vì mọi người chưa tạo bảng trong database (tạo cũng mệt) nên mình sẽ tạo bảng trong mỗi destination: 
@@ -7,3 +12,8 @@ chọn new để create table:
 	đặt tên các bảng như task truncate phía trước
 	các cột phải giữ nguyên không sửa type khi bấm chữ new, riêng bảng compiled_covid_19, cột health_region sửa thành varchar(255)
 	click qua mapping để nó tự check lại
+
+- Thay đổi connection database trong các Execute Task Get LSET và Update LSET, Change Column Type
+
+
+DESKTOP-L93DHEQ
