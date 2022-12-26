@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="122"
-  DTS:VersionGUID="{97D4867A-DC8A-41E2-BE7E-7D3AF3BCF131}">
+  DTS:VersionBuild="139"
+  DTS:VersionGUID="{5BCF9472-97ED-4D9B-989A-9A9A17BC45C7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -189,7 +189,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-L93DHEQ;Initial Catalog=Covid_19_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package-{6B637863-ACFA-4805-BFCD-BE7B0C8E25EB}DESKTOP-L93DHEQ.Covid_19_METADATA;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=LAPTOP-A0V0BIVE;Initial Catalog=Covid_19_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{6B637863-ACFA-4805-BFCD-BE7B0C8E25EB}DESKTOP-L93DHEQ.Covid_19_METADATA;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -201,7 +201,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-L93DHEQ;Initial Catalog=COVID_DB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package-{1EE3BD07-D243-410A-8C9E-E9C6C38AF2C1}DESKTOP-L93DHEQ.COVID_DB;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=LAPTOP-A0V0BIVE;Initial Catalog=COVID_DB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{1EE3BD07-D243-410A-8C9E-E9C6C38AF2C1}DESKTOP-L93DHEQ.COVID_DB;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -226,6 +226,54 @@
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
           DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\BI\TH\Data\Public Health Units GROUP.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 10]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{F540A829-D35C-4BDA-9447-5B8CA3628E8C}"
+      DTS:ObjectName="Excel Connection Manager 10">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\Data\Cases Report.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 11]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{40DAF9CF-493A-4747-BBBA-D127366E60F5}"
+      DTS:ObjectName="Excel Connection Manager 11">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\Data\Cases_Report.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 12]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{78BE8BB3-61FA-4AC7-BD2A-6B8ADDDF2740}"
+      DTS:ObjectName="Excel Connection Manager 12">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\BI\TH\Data\Cases _Report_97203.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 13]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{449CCB91-8A08-4C3E-B63A-45D6371209FB}"
+      DTS:ObjectName="Excel Connection Manager 13">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\Cases _Report_97203.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -301,6 +349,30 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 8]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{3748ABD0-463A-47AC-94B8-D4BD9254DBDA}"
+      DTS:ObjectName="Excel Connection Manager 8">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\BI\TH\Data\Public health unit.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 9]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{26429F67-EDA1-439F-A0CB-20A1D944FEC9}"
+      DTS:ObjectName="Excel Connection Manager 9">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\BI\TH\Data\Cases Report.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{A13285B0-C657-4BF7-9CF6-B7418EBDDC15}"
@@ -323,7 +395,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ObjectId"
-              DTS:DTSID="{C0B4E370-10BD-44E6-AD6A-2DC93235E830}"
+              DTS:DTSID="{27C8F2CE-0902-4BFB-937D-717C30C171CA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -332,7 +404,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="row_id"
-              DTS:DTSID="{6240C94F-FDBB-43B9-9719-5E08C3628424}"
+              DTS:DTSID="{1A2C0742-FB9F-45F5-B69C-46201448FB0F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -341,7 +413,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="date_reported"
-              DTS:DTSID="{35C53EB3-CFFF-4765-A598-525AE89E137A}"
+              DTS:DTSID="{F4730973-C7A3-4A1B-AF10-CD71915911E3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -350,7 +422,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="health_region"
-              DTS:DTSID="{2E4C5730-BF3F-4EFB-A467-19E2B2F9CBFE}"
+              DTS:DTSID="{479E997D-32BD-42AE-86DE-CA38165790CD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -359,7 +431,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="age_group"
-              DTS:DTSID="{FAFAD6EB-FF9A-4F42-B174-8FD541ED9CC8}"
+              DTS:DTSID="{30BD39F5-6C86-4235-A413-6C72A1EFA563}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -368,7 +440,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="gender"
-              DTS:DTSID="{03E39034-3143-4E54-A34E-3DF27820774D}"
+              DTS:DTSID="{564D4604-824A-4A46-BCE3-C68224ECC67A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -377,7 +449,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="exposure"
-              DTS:DTSID="{FFA4EA55-4359-49EF-AE5E-FE4DCA794FEC}"
+              DTS:DTSID="{D437DA68-5F30-4468-BA3F-B3A0064804E8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -386,7 +458,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="case_status"
-              DTS:DTSID="{37FD9864-9E04-486F-9CEB-8F9AB8396ADF}"
+              DTS:DTSID="{AD1E47FD-6C4B-4B42-BBC9-E84AAFAF3EAA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -395,7 +467,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="province"
-              DTS:DTSID="{49F8819C-ADAC-4A1C-86E1-3A7FAFBEA23D}"
+              DTS:DTSID="{87FD1FFD-B3B9-46AF-9AF3-505CE1EFEDAE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -404,7 +476,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Created Date"
-              DTS:DTSID="{BCDDE975-56C6-4DD1-8163-853C12D43A03}"
+              DTS:DTSID="{FE9787F4-7756-4A22-9509-4899EA9AEDE7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -413,7 +485,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Updated Date"
-              DTS:DTSID="{79CB9ECD-B2B5-46C0-9F5F-795CC8CF1894}"
+              DTS:DTSID="{6D2EBB61-F846-4536-9B54-92ABDC34ADC0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -422,7 +494,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Status"
-              DTS:DTSID="{C6412CE9-56F4-46BE-AB27-518CACE9A8FF}"
+              DTS:DTSID="{A875AD92-8F36-4B26-86EA-8166C31913DD}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -918,7 +990,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Date"
-              DTS:DTSID="{FC85D483-C98A-4A66-8A25-954CC9C9F0BE}"
+              DTS:DTSID="{76C212E1-42BF-4661-B861-C20851BD0929}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -927,7 +999,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="PHU ID"
-              DTS:DTSID="{C3606BB0-F0AA-4593-8D3E-E1153135BDA0}"
+              DTS:DTSID="{ECE1D3DD-5347-4B76-BBC7-1CFE9A09107F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -936,7 +1008,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Agegroup"
-              DTS:DTSID="{0F25ECC9-C958-4231-955A-BC741E039661}"
+              DTS:DTSID="{00ECB40B-090B-434A-9B98-311BC4F883E9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -945,7 +1017,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="At least one dose_cumulative"
-              DTS:DTSID="{34729004-023C-4E65-9BE1-FF22BA9817A2}"
+              DTS:DTSID="{685DF5D0-AAAA-4D22-9107-1FB0C15E6887}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -954,7 +1026,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Second_dose_cumulative"
-              DTS:DTSID="{0E49C3FE-AA45-493D-8C25-C710EA23DBC4}"
+              DTS:DTSID="{2F9585BA-297B-4C06-954E-6085B665B3E0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -963,7 +1035,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="fully_vaccinated_cumulative"
-              DTS:DTSID="{FD42BE77-EBD1-4E6E-8C05-D357B36EE37E}"
+              DTS:DTSID="{22748923-4DD5-4D74-8A74-C5ED8F91C2D3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -972,7 +1044,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="third_dose_cumulative"
-              DTS:DTSID="{E43A5C9F-BBD8-4493-A593-26E73812F9A6}"
+              DTS:DTSID="{B1BC8620-88A3-4D05-A2C8-9931B75D7FA8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -981,7 +1053,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Created Date"
-              DTS:DTSID="{BF99857B-D494-409C-908C-2BBDC923D9CA}"
+              DTS:DTSID="{C0FE2E5D-0D5A-4E68-A057-3E944AA59ADB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -990,7 +1062,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Updated Date"
-              DTS:DTSID="{D990E79C-7C93-4263-87F3-C9AD9BDE59E2}"
+              DTS:DTSID="{6DF08BA2-AA2C-4E9C-B1B4-9AF4D24EE908}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -999,7 +1071,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Status"
-              DTS:DTSID="{1123032E-A132-4F0B-B748-B455853124B1}"
+              DTS:DTSID="{F6BEC015-4CD7-48B6-B1B2-527BE233C8A4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1008,7 +1080,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Vaccines_ID"
-              DTS:DTSID="{DD8C5220-5FFF-4DDB-952F-F61B10F84D18}"
+              DTS:DTSID="{AD1D54FA-105E-4266-AF12-DB7B30F6E8F3}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -1371,8 +1443,8 @@
                   <connections>
                     <connection
                       refId="Package\Canada_Compiled_Case\Canada_Compiled_Case\Flat File Source.Connections[FlatFileConnection]"
-                      connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 2]"
-                      connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 2]"
+                      connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                      connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
                       name="FlatFileConnection" />
                   </connections>
                   <outputs>
@@ -1766,7 +1838,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[Canada_Compiled_Case]</property>
+                      name="OpenRowset">[dbo].[Canada_Compiled_Case]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -1935,15 +2007,13 @@
                           name="row_id" />
                         <externalMetadataColumn
                           refId="Package\Canada_Compiled_Case\Canada_Compiled_Case\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[date_reported]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
+                          dataType="dbTimeStamp"
                           name="date_reported" />
                         <externalMetadataColumn
                           refId="Package\Canada_Compiled_Case\Canada_Compiled_Case\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[health_region]"
                           codePage="1252"
                           dataType="str"
-                          length="255"
+                          length="50"
                           name="health_region" />
                         <externalMetadataColumn
                           refId="Package\Canada_Compiled_Case\Canada_Compiled_Case\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[age_group]"
@@ -1977,21 +2047,15 @@
                           name="province" />
                         <externalMetadataColumn
                           refId="Package\Canada_Compiled_Case\Canada_Compiled_Case\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Created Date]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
+                          dataType="dbTimeStamp"
                           name="Created Date" />
                         <externalMetadataColumn
                           refId="Package\Canada_Compiled_Case\Canada_Compiled_Case\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Updated Date]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
+                          dataType="dbTimeStamp"
                           name="Updated Date" />
                         <externalMetadataColumn
                           refId="Package\Canada_Compiled_Case\Canada_Compiled_Case\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
+                          dataType="i4"
                           name="Status" />
                       </externalMetadataColumns>
                     </input>
@@ -2195,7 +2259,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Change Column Type Ontario_Cases_Report"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -2211,7 +2275,7 @@
           DTS:ExecutableType="Microsoft.ExpressionTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="GET CET_Ontario_Cases_Report"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ExpressionTask
@@ -2226,7 +2290,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="GET LSET_Ontario_Cases_Report"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -2363,7 +2427,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">'Cases Report$'</property>
+                      name="OpenRowset"></property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -2390,8 +2454,8 @@
                   <connections>
                     <connection
                       refId="Package\Ontario_Cases_Report\Ontario_Cases_Report\Excel Source.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 4]"
-                      connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 4]"
+                      connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 10]"
+                      connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 10]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -3164,7 +3228,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="truncate_Ontario_Cases_Report"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -3180,7 +3244,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="UPDATE LSET_Ontario_Cases_Report IN METADATA"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -3206,6 +3270,14 @@
           DTS:ObjectName="Constraint"
           DTS:To="Package\Ontario_Cases_Report\UPDATE LSET_Ontario_Cases_Report IN METADATA" />
         <DTS:PrecedenceConstraint
+          DTS:refId="Package\Ontario_Cases_Report.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{9137E274-8596-417A-88A9-3B162A99A688}"
+          DTS:From="Package\Ontario_Cases_Report\Ontario_Cases_Report"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Ontario_Cases_Report\Change Column Type Ontario_Cases_Report" />
+        <DTS:PrecedenceConstraint
           DTS:refId="Package\Ontario_Cases_Report.PrecedenceConstraints[Constraint 11]"
           DTS:CreationName=""
           DTS:DTSID="{B6FDD073-E313-46D7-8706-C531F4895933}"
@@ -3221,14 +3293,6 @@
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 13 1"
           DTS:To="Package\Ontario_Cases_Report\GET LSET_Ontario_Cases_Report" />
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Ontario_Cases_Report.PrecedenceConstraints[Constraint 15]"
-          DTS:CreationName=""
-          DTS:DTSID="{41038C07-F466-44E1-B5E9-B6C62750B09E}"
-          DTS:From="Package\Ontario_Cases_Report\Ontario_Cases_Report"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 15"
-          DTS:To="Package\Ontario_Cases_Report\Change Column Type Ontario_Cases_Report" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Ontario_Cases_Report.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
@@ -3435,8 +3499,8 @@
                   <connections>
                     <connection
                       refId="Package\Ontario_ongoing_outbreaks\Ontario_ongoing_outbreaks\Flat File Source.Connections[FlatFileConnection]"
-                      connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 3]"
-                      connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 3]"
+                      connectionManagerID="Package.ConnectionManagers[ongoing_outbreaks_phu]"
+                      connectionManagerRefId="Package.ConnectionManagers[ongoing_outbreaks_phu]"
                       name="FlatFileConnection" />
                   </connections>
                   <outputs>
@@ -3849,9 +3913,7 @@
                           name="Going_breaks_ID" />
                         <externalMetadataColumn
                           refId="Package\Ontario_ongoing_outbreaks\Ontario_ongoing_outbreaks\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[date]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
+                          dataType="dbTimeStamp"
                           name="date" />
                         <externalMetadataColumn
                           refId="Package\Ontario_ongoing_outbreaks\Ontario_ongoing_outbreaks\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[phu_num]"
@@ -3867,27 +3929,19 @@
                           name="outbreak_group" />
                         <externalMetadataColumn
                           refId="Package\Ontario_ongoing_outbreaks\Ontario_ongoing_outbreaks\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[number_ongoing_outbreaks]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
+                          dataType="i4"
                           name="number_ongoing_outbreaks" />
                         <externalMetadataColumn
                           refId="Package\Ontario_ongoing_outbreaks\Ontario_ongoing_outbreaks\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Created Date]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
+                          dataType="dbTimeStamp"
                           name="Created Date" />
                         <externalMetadataColumn
                           refId="Package\Ontario_ongoing_outbreaks\Ontario_ongoing_outbreaks\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Updated Date]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
+                          dataType="dbTimeStamp"
                           name="Updated Date" />
                         <externalMetadataColumn
                           refId="Package\Ontario_ongoing_outbreaks\Ontario_ongoing_outbreaks\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
+                          dataType="i4"
                           name="Status" />
                       </externalMetadataColumns>
                     </input>
@@ -4202,7 +4256,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">'Public health unit$'</property>
+                      name="OpenRowset"></property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -4229,8 +4283,8 @@
                   <connections>
                     <connection
                       refId="Package\Ontario_PHU\Ontario_PHU\Excel Source.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 5]"
-                      connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 5]"
+                      connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 2]"
+                      connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 2]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -4495,7 +4549,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[Ontario_PHU]</property>
+                      name="OpenRowset">[dbo].[Ontario_PHU]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -5308,9 +5362,7 @@
                         isUsed="True">
                         <externalMetadataColumn
                           refId="Package\Ontario_PHU_GROUP\Ontario_PHU_GROUP\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHU_Group_ID]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
+                          dataType="r8"
                           name="PHU_Group_ID" />
                         <externalMetadataColumn
                           refId="Package\Ontario_PHU_GROUP\Ontario_PHU_GROUP\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHU_Group]"
@@ -5484,7 +5536,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Change Column Type Ontario_Vaccines_By_Age"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -5500,7 +5552,7 @@
           DTS:ExecutableType="Microsoft.ExpressionTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="GET CET_VACCINES"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ExpressionTask
@@ -5515,7 +5567,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="GET LSET_VACCINES"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -5662,8 +5714,8 @@
                   <connections>
                     <connection
                       refId="Package\Ontario_Vaccines_By_Age\Ontario_Vaccines_By_Age\Flat File Source.Connections[FlatFileConnection]"
-                      connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 1]"
-                      connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                      connectionManagerID="Package.ConnectionManagers[vaccines_by_age_phu]"
+                      connectionManagerRefId="Package.ConnectionManagers[vaccines_by_age_phu]"
                       name="FlatFileConnection" />
                   </connections>
                   <outputs>
@@ -6029,7 +6081,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[Ontario_Vaccines_By_Age]</property>
+                      name="OpenRowset">[dbo].[Ontario_Vaccines_By_Age]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -6063,7 +6115,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                      name="FastLoadOptions">TABLOCK</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -6278,7 +6330,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Original Type"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -6294,7 +6346,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="truncate Ontario_Vaccines_By_Age"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -6310,7 +6362,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="UPDATE LSET_VACCINES IN METADATA"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -6388,14 +6440,6 @@
       DTS:ObjectName="Constraint"
       DTS:To="Package\Ontario_Cases_Report" />
     <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
-      DTS:CreationName=""
-      DTS:DTSID="{BB3BD91E-0B95-438E-9696-30F5BAC4F01F}"
-      DTS:From="Package\Ontario_Cases_Report"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 1"
-      DTS:To="Package\Canada_Compiled_Case" />
-    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
       DTS:DTSID="{75F42DC1-DAEE-4376-87CD-DFB5146C05BA}"
@@ -6433,27 +6477,27 @@
       <GraphLayout
         Capacity="128" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="192,42"
+          Size="192,41.6"
           Id="Package\Canada_Compiled_Case\Canada_Compiled_Case"
           TopLeft="59.8877560282583,283.156740213637" />
         <NodeLayout
-          Size="295,42"
+          Size="295.2,41.6"
           Id="Package\Canada_Compiled_Case\Change Column Type Canada_Compiled_Case"
           TopLeft="5.5,380.568504073798" />
         <NodeLayout
-          Size="238,42"
+          Size="238.4,41.6"
           Id="Package\Canada_Compiled_Case\GET CET_Canada_Compiled_Case"
           TopLeft="41.0169970108218,5.5" />
         <NodeLayout
-          Size="243,42"
+          Size="243.2,41.6"
           Id="Package\Canada_Compiled_Case\GET LSET_Canada_Compiled_Case"
           TopLeft="35.5394391124203,82.1616258147685" />
         <NodeLayout
-          Size="236,42"
+          Size="236,41.6"
           Id="Package\Canada_Compiled_Case\truncate_Canada_Compiled_Case"
           TopLeft="41.4646251957884,189.112621407926" />
         <NodeLayout
-          Size="200,42"
+          Size="200,41.6"
           Id="Package\Canada_Compiled_Case\UPDATE LSET_COMPILED"
           TopLeft="51.9843464904682,516.88447258691" />
         <EdgeLayout
@@ -6569,32 +6613,32 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="332,611"
-          Size="332,654"
+          PanelSize="332,611.2"
+          Size="332,654.4"
           Id="Package\Canada_Compiled_Case"
           TopLeft="1153.6666696469,84.517644470593" />
         <NodeLayout
-          Size="287,42"
+          Size="287.2,41.6"
           Id="Package\Ontario_Cases_Report\Change Column Type Ontario_Cases_Report"
           TopLeft="35.5000005108971,359.386423454444" />
         <NodeLayout
-          Size="230,42"
+          Size="230.4,41.6"
           Id="Package\Ontario_Cases_Report\GET CET_Ontario_Cases_Report"
           TopLeft="49.9693851745501,125.125910077005" />
         <NodeLayout
-          Size="235,42"
+          Size="235.2,41.6"
           Id="Package\Ontario_Cases_Report\GET LSET_Ontario_Cases_Report"
           TopLeft="56.2061131728973,201.062045713569" />
         <NodeLayout
-          Size="184,42"
+          Size="171.2,41.6"
           Id="Package\Ontario_Cases_Report\Ontario_Cases_Report"
-          TopLeft="87.199994593009,278.509107470307" />
+          TopLeft="87.9142803194592,277.744401577229" />
         <NodeLayout
-          Size="228,42"
+          Size="228,41.6"
           Id="Package\Ontario_Cases_Report\truncate_Ontario_Cases_Report"
           TopLeft="43.8411503171919,19.2647060753977" />
         <NodeLayout
-          Size="326,42"
+          Size="326.4,41.6"
           Id="Package\Ontario_Cases_Report\UPDATE LSET_Ontario_Cases_Report IN METADATA"
           TopLeft="12.6428572644993,435.853786245267" />
         <EdgeLayout
@@ -6621,18 +6665,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Ontario_Cases_Report.PrecedenceConstraints[Constraint 11]"
-          TopLeft="176.453053882953,243.062045713569">
+          TopLeft="173.660196746178,242.662045713569">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,35.447061756738"
+              EndConnector="0,35.0823558636603"
               Start="0,0"
-              End="0,27.947061756738">
+              End="0,27.5823558636603">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.947061756738" />
+                    End="0,27.5823558636603" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6676,28 +6720,6 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Ontario_Cases_Report.PrecedenceConstraints[Constraint 15]"
-          TopLeft="179.099997551953,320.509107470307">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,38.877315984137"
-              Start="0,0"
-              End="0,31.377315984137">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.377315984137" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Ontario_Cases_Report.PrecedenceConstraints[Constraint 2]"
           TopLeft="161.505267745871,60.8647060753977">
           <EdgeLayout.Curve>
@@ -6719,35 +6741,57 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Ontario_Cases_Report.PrecedenceConstraints[Constraint 1]"
+          TopLeft="176.307140415178,319.344401577229">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.0420218772147"
+              Start="0,0"
+              End="0,32.5420218772147">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5420218772147" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="398,572"
-          Size="398,615"
+          PanelSize="382.4,634.4"
+          Size="382.4,677.6"
           Id="Package\Ontario_Cases_Report"
           TopLeft="634.142861558467,98.3226873627406" />
         <NodeLayout
-          Size="248,45"
+          Size="248,44.8"
           Id="Package\Ontario_ongoing_outbreaks\Change Column Type Ontario_ongoing_outbreaks"
           TopLeft="37.4636107685074,437.552104158357" />
         <NodeLayout
-          Size="256,42"
+          Size="256,41.6"
           Id="Package\Ontario_ongoing_outbreaks\GET CET_Ontario_ongoing_outbreaks"
           TopLeft="34.0214285258107,8.55882357231064" />
         <NodeLayout
-          Size="261,42"
+          Size="260.8,41.6"
           Id="Package\Ontario_ongoing_outbreaks\GET LSET_Ontario_ongoing_outbreaks"
           TopLeft="26.40101344806,88.7890768881082" />
         <NodeLayout
-          Size="209,42"
+          Size="208.8,41.6"
           Id="Package\Ontario_ongoing_outbreaks\Ontario_ongoing_outbreaks"
           TopLeft="58.6887764160069,333.10111799809" />
         <NodeLayout
-          Size="254,42"
+          Size="254.4,41.6"
           Id="Package\Ontario_ongoing_outbreaks\truncate_Ontario_ongoing_outbreaks"
           TopLeft="33.3571433315469,211.467362790829" />
         <NodeLayout
-          Size="280,42"
+          Size="280,41.6"
           Id="Package\Ontario_ongoing_outbreaks\UPDATE LSET_Ontario_ongoing_outbreaks"
           TopLeft="22.6078252433576,515.100158836395" />
         <EdgeLayout
@@ -6863,32 +6907,32 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="316,631"
-          Size="316,674"
+          PanelSize="316,631.2"
+          Size="316,673.6"
           Id="Package\Ontario_ongoing_outbreaks"
           TopLeft="2068.25713975527,79.3529343233803" />
         <NodeLayout
-          Size="243,42"
+          Size="243.2,41.6"
           Id="Package\Ontario_PHU\Change Column Type Ontario_PHU"
           TopLeft="5.5,376.372828768036" />
         <NodeLayout
-          Size="186,42"
+          Size="185.6,41.6"
           Id="Package\Ontario_PHU\GET CET_Ontario_PHU"
           TopLeft="29.4251712247874,5.5" />
         <NodeLayout
-          Size="191,42"
+          Size="191.2,41.6"
           Id="Package\Ontario_PHU\GET LSET_Ontario_PHU"
           TopLeft="21.8047561470366,79.6126061711764" />
         <NodeLayout
-          Size="140,42"
+          Size="140,41.6"
           Id="Package\Ontario_PHU\Ontario_PHU"
           TopLeft="55.2935340531573,299.535988559815" />
         <NodeLayout
-          Size="184,42"
+          Size="184,41.6"
           Id="Package\Ontario_PHU\truncate_Ontario_PHU"
           TopLeft="29.7408125295624,189.773241282873" />
         <NodeLayout
-          Size="210,42"
+          Size="209.6,41.6"
           Id="Package\Ontario_PHU\UPDATE LSET_Ontario_PHU"
           TopLeft="19.4401393952357,510.51192347793" />
         <EdgeLayout
@@ -7004,32 +7048,32 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="290,611"
-          Size="290,654"
+          PanelSize="289.6,611.2"
+          Size="289.6,654.4"
           Id="Package\Ontario_PHU"
           TopLeft="1632.28571390457,87.8705860867772" />
         <NodeLayout
-          Size="252,42"
+          Size="252,41.6"
           Id="Package\Ontario_PHU_GROUP\Change Column Type Ontario_PHU_GROUP"
           TopLeft="27.7857199785662,395.933607218922" />
         <NodeLayout
-          Size="226,42"
+          Size="225.6,41.6"
           Id="Package\Ontario_PHU_GROUP\GET CET_Ontario_PHU_GROUP"
           TopLeft="46.9285721340957,2.44117642768947" />
         <NodeLayout
-          Size="231,42"
+          Size="231.2,41.6"
           Id="Package\Ontario_PHU_GROUP\GET LSET_Ontario_PHU_GROUP"
           TopLeft="44.3081571414941,87.259665101953" />
         <NodeLayout
-          Size="180,42"
+          Size="180,41.6"
           Id="Package\Ontario_PHU_GROUP\Ontario_PHU_GROUP"
           TopLeft="63.9823150246598,278.331360557004" />
         <NodeLayout
-          Size="224,42"
+          Size="224,41.6"
           Id="Package\Ontario_PHU_GROUP\truncate_Ontario_PHU_GROUP"
           TopLeft="43.3190493666393,177.51483254998" />
         <NodeLayout
-          Size="250,42"
+          Size="249.6,41.6"
           Id="Package\Ontario_PHU_GROUP\UPDATE LSET_Ontario_PHU_GROUP"
           TopLeft="31.9435402193931,506.688394012539" />
         <EdgeLayout
@@ -7145,36 +7189,36 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="302,606"
-          Size="302,649"
+          PanelSize="302.4,606.4"
+          Size="302.4,648.8"
           Id="Package\Ontario_PHU_GROUP"
           TopLeft="2497.53571872262,84.838229387483" />
         <NodeLayout
-          Size="305,42"
+          Size="304.8,41.6"
           Id="Package\Ontario_Vaccines_By_Age\Change Column Type Ontario_Vaccines_By_Age"
           TopLeft="5.5,492.420329446108" />
         <NodeLayout
-          Size="174,42"
+          Size="174.4,41.6"
           Id="Package\Ontario_Vaccines_By_Age\GET CET_VACCINES"
           TopLeft="68.0000003405984,223.96470953948" />
         <NodeLayout
-          Size="179,42"
+          Size="179.2,41.6"
           Id="Package\Ontario_Vaccines_By_Age\GET LSET_VACCINES"
           TopLeft="71.2142868333935,329.976475821895" />
         <NodeLayout
-          Size="201,42"
+          Size="200.8,41.6"
           Id="Package\Ontario_Vaccines_By_Age\Ontario_Vaccines_By_Age"
-          TopLeft="61.9421767931305,409.071433389889" />
+          TopLeft="61.9421767931305,408.306727496811" />
         <NodeLayout
-          Size="141,42"
+          Size="140.8,41.6"
           Id="Package\Ontario_Vaccines_By_Age\Original Type"
           TopLeft="92.9428645022065,46.7941182261933" />
         <NodeLayout
-          Size="211,42"
+          Size="211.2,41.6"
           Id="Package\Ontario_Vaccines_By_Age\truncate Ontario_Vaccines_By_Age"
           TopLeft="54.785715125045,134.504202725566" />
         <NodeLayout
-          Size="270,42"
+          Size="270.4,41.6"
           Id="Package\Ontario_Vaccines_By_Age\UPDATE LSET_VACCINES IN METADATA"
           TopLeft="24.7469422214583,576.149585655451" />
         <EdgeLayout
@@ -7267,18 +7311,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Ontario_Vaccines_By_Age.PrecedenceConstraints[Constraint 14]"
-          TopLeft="161.578231813262,371.976475821895">
+          TopLeft="161.578231813262,371.576475821895">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,37.094957567994"
+              EndConnector="0,36.7302516749163"
               Start="0,0"
-              End="0,29.594957567994">
+              End="0,29.2302516749163">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.594957567994" />
+                    End="0,29.2302516749163" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7289,18 +7333,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Ontario_Vaccines_By_Age.PrecedenceConstraints[Constraint 9]"
-          TopLeft="160.221088396565,451.071433389889">
+          TopLeft="160.121088396565,449.906727496811">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,41.348896056219"
+              EndConnector="0,42.5136019492966"
               Start="0,0"
-              End="0,33.848896056219">
+              End="0,35.0136019492966">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.848896056219" />
+                    End="0,35.0136019492966" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7312,46 +7356,36 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="371,692"
-          Size="371,735"
+          PanelSize="371.2,692"
+          Size="371.2,735.2"
           Id="Package\Ontario_Vaccines_By_Age"
           TopLeft="48.6516824881121,40.2095215348639" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="419.651682488112,406.766104448802">
+          TopLeft="419.851682488112,407.809521534864">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="214.491179070355,0"
+              EndConnector="214.291179070355,29.3131658278767"
               Start="0,0"
-              End="206.991179070355,0">
+              End="206.791179070355,29.3131658278767">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="206.991179070355,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="1032.14286155847,408.670165916667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="121.523808088433,0"
-              Start="0,0"
-              End="114.023808088433,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
+                    End="103.145589535177,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="103.145589535177,0"
+                    Point2="107.145589535177,0"
+                    Point3="107.145589535177,4" />
                   <mssgle:LineSegment
-                    End="114.023808088433,0" />
+                    End="107.145589535177,25.3131658278767" />
+                  <mssgle:CubicBezierSegment
+                    Point1="107.145589535177,25.3131658278767"
+                    Point2="107.145589535177,29.3131658278767"
+                    Point3="111.145589535177,29.3131658278767" />
+                  <mssgle:LineSegment
+                    End="206.791179070355,29.3131658278767" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7366,14 +7400,14 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="146.619044257667,0"
+              EndConnector="146.61904425767,0"
               Start="0,0"
-              End="139.119044257667,0">
+              End="139.11904425767,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="139.119044257667,0" />
+                    End="139.11904425767,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7435,42 +7469,42 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="150,42"
+          Size="150.4,41.6"
           Id="Package\Canada_Compiled_Case\Canada_Compiled_Case\Flat File Source"
           TopLeft="64.142859563536,120.588237181667" />
         <NodeLayout
-          Size="154,42"
+          Size="153.6,41.6"
           Id="Package\Canada_Compiled_Case\Canada_Compiled_Case\Conditional Split"
           TopLeft="574,137" />
         <NodeLayout
-          Size="153,42"
+          Size="152.8,41.6"
           Id="Package\Canada_Compiled_Case\Canada_Compiled_Case\Derived Column"
           TopLeft="322,121" />
         <NodeLayout
-          Size="170,42"
+          Size="170.4,41.6"
           Id="Package\Canada_Compiled_Case\Canada_Compiled_Case\OLE DB Destination"
-          TopLeft="782,137" />
+          TopLeft="779.85714282065,139.294117679233" />
         <EdgeLayout
           Id="Package\Canada_Compiled_Case\Canada_Compiled_Case.Paths[Case 1]"
-          TopLeft="728.4,157.8">
+          TopLeft="727.6,158.947058839616">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="53.5999999999999,0"
+              EndConnector="52.2571428206502,0"
               Start="0,0"
-              End="46.0999999999999,0">
+              End="44.7571428206502,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="46.0999999999999,0" />
+                    End="44.7571428206502,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="7.83191406249995,5,30.436171875,9.5537109375"
+              BoundingBox="7.1604854728251,5,30.436171875,9.5537109375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -7552,20 +7586,20 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="170,42"
+          Size="169.6,41.6"
           Id="Package\Ontario_Cases_Report\Ontario_Cases_Report\OLE DB Destination"
           TopLeft="505,248" />
         <NodeLayout
-          Size="154,42"
+          Size="153.6,41.6"
           Id="Package\Ontario_Cases_Report\Ontario_Cases_Report\Conditional Split"
           TopLeft="236.5,252.5" />
         <NodeLayout
-          Size="138,42"
+          Size="138.4,41.6"
           Id="Package\Ontario_Cases_Report\Ontario_Cases_Report\Excel Source"
-          TopLeft="40.428573241039,249.764708263239" />
+          TopLeft="40.428573241039,248.764708263239" />
         <EdgeLayout
           Id="Package\Ontario_Cases_Report\Ontario_Cases_Report.Paths[Excel Source Output]"
-          TopLeft="178.828573241039,271.932354131619">
+          TopLeft="178.828573241039,271.432354131619">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -7644,15 +7678,15 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="154,42"
+          Size="153.6,41.6"
           Id="Package\Ontario_ongoing_outbreaks\Ontario_ongoing_outbreaks\Conditional Split"
           TopLeft="424,296" />
         <NodeLayout
-          Size="150,42"
+          Size="150.4,41.6"
           Id="Package\Ontario_ongoing_outbreaks\Ontario_ongoing_outbreaks\Flat File Source"
           TopLeft="168,238" />
         <NodeLayout
-          Size="170,42"
+          Size="170.4,41.6"
           Id="Package\Ontario_ongoing_outbreaks\Ontario_ongoing_outbreaks\OLE DB Destination"
           TopLeft="671,239" />
         <EdgeLayout
@@ -7691,37 +7725,37 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Ontario_ongoing_outbreaks\Ontario_ongoing_outbreaks.Paths[Case 1]"
-          TopLeft="578.4,316.8">
+          TopLeft="577.6,316.8">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="92.5999999999999,-57"
+              EndConnector="93.4,-57"
               Start="0,0"
-              End="85.0999999999999,-57">
+              End="85.9,-57">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="42.3,0" />
+                    End="42.7,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="42.3,0"
-                    Point2="46.3,0"
-                    Point3="46.3,-4" />
+                    Point1="42.7,0"
+                    Point2="46.7,0"
+                    Point3="46.7,-4" />
                   <mssgle:LineSegment
-                    End="46.3,-53" />
+                    End="46.7,-53" />
                   <mssgle:CubicBezierSegment
-                    Point1="46.3,-53"
-                    Point2="46.3,-57"
-                    Point3="50.3,-57" />
+                    Point1="46.7,-53"
+                    Point2="46.7,-57"
+                    Point3="50.7,-57" />
                   <mssgle:LineSegment
-                    End="85.0999999999999,-57" />
+                    End="85.9,-57" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="31.0819140625,1,30.436171875,9.5537109375"
+              BoundingBox="31.4819140625,1,30.436171875,9.5537109375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -7747,43 +7781,43 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="170,42"
+          Size="169.6,41.6"
           Id="Package\Ontario_PHU\Ontario_PHU\OLE DB Destination"
           TopLeft="722,216" />
         <NodeLayout
-          Size="154,42"
+          Size="153.6,41.6"
           Id="Package\Ontario_PHU\Ontario_PHU\Conditional Split"
           TopLeft="431,193" />
         <NodeLayout
-          Size="138,42"
+          Size="138.4,41.6"
           Id="Package\Ontario_PHU\Ontario_PHU\Excel Source"
-          TopLeft="121,160" />
+          TopLeft="122,158" />
         <EdgeLayout
           Id="Package\Ontario_PHU\Ontario_PHU.Paths[Excel Source Output]"
-          TopLeft="259.4,180.8">
+          TopLeft="260.4,178.8">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="171.6,33.0000000000001"
+              EndConnector="170.6,35"
               Start="0,0"
-              End="164.1,33.0000000000001">
+              End="163.1,35">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="81.8,0" />
+                    End="81.3,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="81.8,0"
-                    Point2="85.8,0"
-                    Point3="85.8,4" />
+                    Point1="81.3,0"
+                    Point2="85.3,0"
+                    Point3="85.3,4" />
                   <mssgle:LineSegment
-                    End="85.8,29.0000000000001" />
+                    End="85.3,31" />
                   <mssgle:CubicBezierSegment
-                    Point1="85.8,29.0000000000001"
-                    Point2="85.8,33.0000000000001"
-                    Point3="89.8,33.0000000000001" />
+                    Point1="85.3,31"
+                    Point2="85.3,35"
+                    Point3="89.3,35" />
                   <mssgle:LineSegment
-                    End="164.1,33.0000000000001" />
+                    End="163.1,35" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7863,17 +7897,17 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="154,42"
+          Size="153.6,41.6"
           Id="Package\Ontario_PHU_GROUP\Ontario_PHU_GROUP\Conditional Split"
           TopLeft="398,322" />
         <NodeLayout
-          Size="138,42"
+          Size="137.6,41.6"
           Id="Package\Ontario_PHU_GROUP\Ontario_PHU_GROUP\Excel Source"
           TopLeft="243,215" />
         <NodeLayout
-          Size="170,42"
+          Size="169.6,41.6"
           Id="Package\Ontario_PHU_GROUP\Ontario_PHU_GROUP\OLE DB Destination"
-          TopLeft="480,224" />
+          TopLeft="481,223" />
         <EdgeLayout
           Id="Package\Ontario_PHU_GROUP\Ontario_PHU_GROUP.Paths[Excel Source Output]"
           TopLeft="312.2,256.6">
@@ -7910,37 +7944,37 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Ontario_PHU_GROUP\Ontario_PHU_GROUP.Paths[Case 1]"
-          TopLeft="499.6,322">
+          TopLeft="499.066666666667,322">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="65.5999999999999,-56.4"
+              EndConnector="66.7333333333333,-57.4"
               Start="0,0"
-              End="65.5999999999999,-48.9">
+              End="66.7333333333333,-49.9">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-18.9070769230769" />
+                    End="0,-19.3150515463917" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-18.9070769230769"
-                    Point2="0,-22.9070769230769"
-                    Point3="4,-22.9070769230769" />
+                    Point1="0,-19.3150515463917"
+                    Point2="0,-23.3150515463917"
+                    Point3="4,-23.3150515463917" />
                   <mssgle:LineSegment
-                    End="61.5999999999999,-22.9070769230769" />
+                    End="62.7333333333333,-23.3150515463917" />
                   <mssgle:CubicBezierSegment
-                    Point1="61.5999999999999,-22.9070769230769"
-                    Point2="65.5999999999999,-22.9070769230769"
-                    Point3="65.5999999999999,-26.9070769230769" />
+                    Point1="62.7333333333333,-23.3150515463917"
+                    Point2="66.7333333333333,-23.3150515463917"
+                    Point3="66.7333333333333,-27.3150515463917" />
                   <mssgle:LineSegment
-                    End="65.5999999999999,-48.9" />
+                    End="66.7333333333333,-49.9" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="17.5819140625,-17.9070769230769,30.436171875,9.5537109375"
+              BoundingBox="18.1485807291666,-18.3150515463917,30.436171875,9.5537109375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -7979,31 +8013,31 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="170,42"
+          Size="170.4,41.6"
           Id="Package\Ontario_Vaccines_By_Age\Ontario_Vaccines_By_Age\OLE DB Destination"
           TopLeft="497.8571513356,149.117649150142" />
         <NodeLayout
-          Size="154,42"
+          Size="153.6,41.6"
           Id="Package\Ontario_Vaccines_By_Age\Ontario_Vaccines_By_Age\Conditional Split"
           TopLeft="257.857147248424,142.235296112443" />
         <NodeLayout
-          Size="150,42"
+          Size="150.4,41.6"
           Id="Package\Ontario_Vaccines_By_Age\Ontario_Vaccines_By_Age\Flat File Source"
-          TopLeft="57.1428581159942,143.764707898599" />
+          TopLeft="58.1428581159942,143.764707898599" />
         <EdgeLayout
           Id="Package\Ontario_Vaccines_By_Age\Ontario_Vaccines_By_Age.Paths[Flat File Source Output]"
-          TopLeft="207.542858115994,163.800002005521">
+          TopLeft="208.542858115994,163.800002005521">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="50.3142891324297,0"
+              EndConnector="49.3142891324298,0"
               Start="0,0"
-              End="42.8142891324297,0">
+              End="41.8142891324298,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="42.8142891324297,0" />
+                    End="41.8142891324298,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8014,25 +8048,25 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Ontario_Vaccines_By_Age\Ontario_Vaccines_By_Age.Paths[Case 1]"
-          TopLeft="412.257147248424,166.476472631293">
+          TopLeft="411.457147248424,166.476472631292">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="85.6000040871756,0"
+              EndConnector="86.4000040871759,0"
               Start="0,0"
-              End="78.1000040871756,0">
+              End="78.9000040871759,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="78.1000040871756,0" />
+                    End="78.9000040871759,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="23.8319161060878,5,30.436171875,9.5537109375"
+              BoundingBox="24.2319161060879,5,30.436171875,9.5537109375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>

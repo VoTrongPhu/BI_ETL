@@ -2,18 +2,18 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>COVID_ETL</Name>
-    <LastWriteTime>2022-12-25T19:08:45.4351875Z</LastWriteTime>
+    <LastWriteTime>2022-12-26T05:01:19.210225Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>Package.dtsx</Name>
-      <LastWriteTime>2022-12-25T11:14:19.2183358Z</LastWriteTime>
+      <LastWriteTime>2022-12-26T04:52:04.5195417Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>NDS.dtsx</Name>
-      <LastWriteTime>2022-12-25T19:58:13.9523809Z</LastWriteTime>
+      <LastWriteTime>2022-12-26T13:39:59.8463476Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
