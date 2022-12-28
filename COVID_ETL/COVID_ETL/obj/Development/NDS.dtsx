@@ -11,11 +11,23 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package2"
   DTS:PackageType="5"
-  DTS:VersionBuild="50"
-  DTS:VersionGUID="{E299EF49-AE3B-4470-8E33-965F1DC93F78}">
+  DTS:VersionBuild="59"
+  DTS:VersionGUID="{3F71D028-EA61-4A34-A5B5-FDCD68305BA8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-8V127BM\PSTUNG.COVID_DB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{850AAACC-6F4E-4C29-822C-68048AA3F394}"
+      DTS:ObjectName="DESKTOP-8V127BM\PSTUNG.COVID_DB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-8V127BM\PSTUNG;Initial Catalog=COVID_DB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package2-{850AAACC-6F4E-4C29-822C-68048AA3F394}DESKTOP-8V127BM\PSTUNG.COVID_DB;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[DESKTOP-L93DHEQ.COVID_19_NDS]"
       DTS:CreationName="OLEDB"
@@ -6591,6 +6603,583 @@ WHERE PHU_SK=?</property>
               </outputs>
             </component>
             <component
+              refId="Package\NDS_PHU_GROUP\Fuzzy Lookup"
+              componentClassID="Microsoft.FuzzyLookup"
+              contactInfo="Fuzzy Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;5"
+              description="Performs data cleaning tasks such as standardizing data, correcting data, and providing missing values.  Uses fuzzy matching to return one or more close matches from a reference table. For example, lookup customer data by address, even if your input address data does not exactly match your reference address data."
+              name="Fuzzy Lookup"
+              version="5">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates whether to reuse an existing fuzzy-match index table or build a new one. The new index table can be temporary, persisted, or persisted and maintained."
+                  name="MatchIndexOptions"
+                  typeConverter="tcMatchIndexOptions">1</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the maximum amount of memory (MB) that this instance of the Fuzzy Lookup transformation can use.  If 0 is given, then the transform will dynamically adjust it's memory usage based upon it's requirements and available system memory."
+                  expressionType="Notify"
+                  name="MaxMemoryUsage" />
+                <property
+                  dataType="System.Null"
+                  description="Specifies the name of the fuzzy-match index table to be reused or the table name in which a newly generated fuzzy-match index table will be written."
+                  name="MatchIndexName"
+                  state="escaped" />
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the reference table or view against which to match incoming records."
+                  name="ReferenceTableName"
+                  state="escaped">_x005B_dbo_x005D_._x005B_PHU_x005D_</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates whether to drop an existing fuzzy-match index table if transformation is configured to generate a new table and a table with the same name already exists."
+                  name="DropExistingMatchIndex">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Whether a copy of the reference table should be made for fuzzy match index construction and subsequent matching.  It is strongly recommended that a copy always be made, otherwise unpredictable output may result if the contents of the reference table change during package execution (or between executions if reusing a fuzzy match index).  If this property is set to false, the reference table must additionally have a clustered index built upon an integer identity column."
+                  name="CopyReferenceTable">1</property>
+                <property
+                  dataType="System.UInt32"
+                  description="Specifies the maximum number of fuzzy matches to return for an input record."
+                  name="MaxOutputMatchesPerInput">1</property>
+                <property
+                  dataType="System.Single"
+                  description="Specifies the minimum similarity score required for the match results that the transformation returns."
+                  name="MinSimilarity">0.4</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the set of white-space and punctuation characters used to separate fuzzy match fields into the words used for matching and scoring a fuzzy lookup."
+                  name="Delimiters"
+                  state="escaped">_x0020__x0009__x000D__x000A__x002C_._x003B_:-_x0022__x0027__x0026__x002F__x005C__x0040__x0021__x003F__x0028__x0029__x003C__x003E__x005B__x005D__x007B__x007D__x007C__x0023__x002A__x005E__x0025_</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the metadata of the reference table in XML format."
+                  name="ReferenceMetadataXml"
+                  state="escaped">_x003C_referenceMetadata_x003E__x003C_referenceColumns_x003E__x003C_referenceColumn_x0020_name_x003D__x0022_PHU_SK_x0022__x0020_dataType_x003D__x0022_DT_I4_x0022__x0020_length_x003D__x0022_0_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_Reporting_PHU_x0022__x0020_dataType_x003D__x0022_DT_WSTR_x0022__x0020_length_x003D__x0022_255_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_Reporting_PHU_Address_x0022__x0020_dataType_x003D__x0022_DT_WSTR_x0022__x0020_length_x003D__x0022_255_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_Reporting_PHU_City_x0022__x0020_dataType_x003D__x0022_DT_WSTR_x0022__x0020_length_x003D__x0022_255_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_Reporting_PHU_Postal_Code_x0022__x0020_dataType_x003D__x0022_DT_WSTR_x0022__x0020_length_x003D__x0022_255_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_Reporting_PHU_Website_x0022__x0020_dataType_x003D__x0022_DT_WSTR_x0022__x0020_length_x003D__x0022_255_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_Reporting_PHU_Latitude_x0022__x0020_dataType_x003D__x0022_DT_R8_x0022__x0020_length_x003D__x0022_0_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_Reporting_PHU_Longitude_x0022__x0020_dataType_x003D__x0022_DT_R8_x0022__x0020_length_x003D__x0022_0_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_PHU_ID_x0022__x0020_dataType_x003D__x0022_DT_I4_x0022__x0020_length_x003D__x0022_0_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_SOR_x0022__x0020_dataType_x003D__x0022_DT_I4_x0022__x0020_length_x003D__x0022_0_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_UpdatedDate_x0022__x0020_dataType_x003D__x0022_DT_DBTIMESTAMP_x0022__x0020_length_x003D__x0022_0_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_CreatedDate_x0022__x0020_dataType_x003D__x0022_DT_DBTIMESTAMP_x0022__x0020_length_x003D__x0022_0_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_Status_x0022__x0020_dataType_x003D__x0022_DT_I4_x0022__x0020_length_x003D__x0022_0_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C__x002F_referenceColumns_x003E__x003C__x002F_referenceMetadata_x003E__x000D__x000A_</property>
+                <property
+                  dataType="System.Boolean"
+                  description="If true, each input record will be directly compared against EVERY record in the reference table.  This may produce slightly better results, but will be extremely slow unless the number of records in the reference table is very small.  Note that the entire reference table will be loaded into main memory if this option is enabled.  This option is primarily intended for debugging purposes and should be used with care."
+                  name="Exhaustive">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="If true, Fuzzy Lookup will partially load the error-tolerant index and the reference table into main memory before execution begins.  This can greatly enhance performance if many input rows are to be processed."
+                  name="WarmCaches">true</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-L93DHEQ.COVID_19_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-L93DHEQ.COVID_19_NDS]"
+                  description="Microsoft SQL Server connection and database in which the fuzzy lookup reference table is located and where the fuzzy match index table will be stored and accessed."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Inputs[Fuzzy Lookup Input]"
+                  name="Fuzzy Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Inputs[Fuzzy Lookup Input].Columns[PHU_Group]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PHU_Group"
+                      lineageId="Package\NDS_PHU_GROUP\LOAD PHU GROUP.Outputs[OLE DB Source Output].Columns[PHU_Group]">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Name of the reference table column with which the input column should be matched."
+                          name="JoinToReferenceColumn"
+                          state="escaped" />
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the match is a fuzzy or an exact match."
+                          name="JoinType"
+                          typeConverter="tcJoinType">2</property>
+                        <property
+                          dataType="System.Single"
+                          description="Specifies the minimum textual similarity required between input and fuzzy matched records on values in this particular join column.  Must be a floating point value between 0.0 and 1.0."
+                          name="MinSimilarity">0</property>
+                        <property
+                          dataType="System.UInt32"
+                          description="Specifies the comparison options for character data. The options are those supported by the FoldString function."
+                          name="FuzzyComparisonFlags"
+                          typeConverter="tcComparisonFlags">1</property>
+                        <property
+                          dataType="System.UInt32"
+                          description="Flags to FoldString that should be used when comparing whether two strings are equivalent."
+                          name="FuzzyComparisonFlagsEx"
+                          typeConverter="tcComparisonFlagsEx">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Inputs[Fuzzy Lookup Input].Columns[PHU_City]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PHU_City"
+                      lineageId="Package\NDS_PHU_GROUP\LOAD PHU GROUP.Outputs[OLE DB Source Output].Columns[PHU_City]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Name of the reference table column with which the input column should be matched."
+                          name="JoinToReferenceColumn"
+                          state="escaped">Reporting_PHU_City</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the match is a fuzzy or an exact match."
+                          name="JoinType"
+                          typeConverter="tcJoinType">2</property>
+                        <property
+                          dataType="System.Single"
+                          description="Specifies the minimum textual similarity required between input and fuzzy matched records on values in this particular join column.  Must be a floating point value between 0.0 and 1.0."
+                          name="MinSimilarity">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data. The options are those supported by the FoldString function."
+                          name="FuzzyComparisonFlags"
+                          typeConverter="tcComparisonFlags">0</property>
+                        <property
+                          dataType="System.UInt32"
+                          description="Flags to FoldString that should be used when comparing whether two strings are equivalent."
+                          name="FuzzyComparisonFlagsEx"
+                          typeConverter="tcComparisonFlagsEx">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Inputs[Fuzzy Lookup Input].Columns[PHU_region]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PHU_region"
+                      lineageId="Package\NDS_PHU_GROUP\LOAD PHU GROUP.Outputs[OLE DB Source Output].Columns[PHU_region]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Name of the reference table column with which the input column should be matched."
+                          name="JoinToReferenceColumn"
+                          state="escaped">Reporting_PHU</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the match is a fuzzy or an exact match."
+                          name="JoinType"
+                          typeConverter="tcJoinType">2</property>
+                        <property
+                          dataType="System.Single"
+                          description="Specifies the minimum textual similarity required between input and fuzzy matched records on values in this particular join column.  Must be a floating point value between 0.0 and 1.0."
+                          name="MinSimilarity">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data. The options are those supported by the FoldString function."
+                          name="FuzzyComparisonFlags"
+                          typeConverter="tcComparisonFlags">0</property>
+                        <property
+                          dataType="System.UInt32"
+                          description="Flags to FoldString that should be used when comparing whether two strings are equivalent."
+                          name="FuzzyComparisonFlagsEx"
+                          typeConverter="tcComparisonFlagsEx">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Inputs[Fuzzy Lookup Input].Columns[Created Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Created Date"
+                      lineageId="Package\NDS_PHU_GROUP\LOAD PHU GROUP.Outputs[OLE DB Source Output].Columns[Created Date]">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Name of the reference table column with which the input column should be matched."
+                          name="JoinToReferenceColumn"
+                          state="escaped" />
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the match is a fuzzy or an exact match."
+                          name="JoinType"
+                          typeConverter="tcJoinType">2</property>
+                        <property
+                          dataType="System.Single"
+                          description="Specifies the minimum textual similarity required between input and fuzzy matched records on values in this particular join column.  Must be a floating point value between 0.0 and 1.0."
+                          name="MinSimilarity">0</property>
+                        <property
+                          dataType="System.UInt32"
+                          description="Specifies the comparison options for character data. The options are those supported by the FoldString function."
+                          name="FuzzyComparisonFlags"
+                          typeConverter="tcComparisonFlags">1</property>
+                        <property
+                          dataType="System.UInt32"
+                          description="Flags to FoldString that should be used when comparing whether two strings are equivalent."
+                          name="FuzzyComparisonFlagsEx"
+                          typeConverter="tcComparisonFlagsEx">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Inputs[Fuzzy Lookup Input].Columns[Updated Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Updated Date"
+                      lineageId="Package\NDS_PHU_GROUP\LOAD PHU GROUP.Outputs[OLE DB Source Output].Columns[Updated Date]">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Name of the reference table column with which the input column should be matched."
+                          name="JoinToReferenceColumn"
+                          state="escaped" />
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the match is a fuzzy or an exact match."
+                          name="JoinType"
+                          typeConverter="tcJoinType">2</property>
+                        <property
+                          dataType="System.Single"
+                          description="Specifies the minimum textual similarity required between input and fuzzy matched records on values in this particular join column.  Must be a floating point value between 0.0 and 1.0."
+                          name="MinSimilarity">0</property>
+                        <property
+                          dataType="System.UInt32"
+                          description="Specifies the comparison options for character data. The options are those supported by the FoldString function."
+                          name="FuzzyComparisonFlags"
+                          typeConverter="tcComparisonFlags">1</property>
+                        <property
+                          dataType="System.UInt32"
+                          description="Flags to FoldString that should be used when comparing whether two strings are equivalent."
+                          name="FuzzyComparisonFlagsEx"
+                          typeConverter="tcComparisonFlagsEx">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Inputs[Fuzzy Lookup Input].Columns[Status]"
+                      cachedDataType="r8"
+                      cachedName="Status"
+                      lineageId="Package\NDS_PHU_GROUP\LOAD PHU GROUP.Outputs[OLE DB Source Output].Columns[Status]">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Name of the reference table column with which the input column should be matched."
+                          name="JoinToReferenceColumn"
+                          state="escaped" />
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the match is a fuzzy or an exact match."
+                          name="JoinType"
+                          typeConverter="tcJoinType">2</property>
+                        <property
+                          dataType="System.Single"
+                          description="Specifies the minimum textual similarity required between input and fuzzy matched records on values in this particular join column.  Must be a floating point value between 0.0 and 1.0."
+                          name="MinSimilarity">0</property>
+                        <property
+                          dataType="System.UInt32"
+                          description="Specifies the comparison options for character data. The options are those supported by the FoldString function."
+                          name="FuzzyComparisonFlags"
+                          typeConverter="tcComparisonFlags">1</property>
+                        <property
+                          dataType="System.UInt32"
+                          description="Flags to FoldString that should be used when comparing whether two strings are equivalent."
+                          name="FuzzyComparisonFlagsEx"
+                          typeConverter="tcComparisonFlagsEx">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Inputs[Fuzzy Lookup Input].Columns[SOR]"
+                      cachedDataType="i4"
+                      cachedName="SOR"
+                      lineageId="Package\NDS_PHU_GROUP\ADD SOR.Outputs[Derived Column Output].Columns[SOR]">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Name of the reference table column with which the input column should be matched."
+                          name="JoinToReferenceColumn"
+                          state="escaped" />
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the match is a fuzzy or an exact match."
+                          name="JoinType"
+                          typeConverter="tcJoinType">2</property>
+                        <property
+                          dataType="System.Single"
+                          description="Specifies the minimum textual similarity required between input and fuzzy matched records on values in this particular join column.  Must be a floating point value between 0.0 and 1.0."
+                          name="MinSimilarity">0</property>
+                        <property
+                          dataType="System.UInt32"
+                          description="Specifies the comparison options for character data. The options are those supported by the FoldString function."
+                          name="FuzzyComparisonFlags"
+                          typeConverter="tcComparisonFlags">1</property>
+                        <property
+                          dataType="System.UInt32"
+                          description="Flags to FoldString that should be used when comparing whether two strings are equivalent."
+                          name="FuzzyComparisonFlagsEx"
+                          typeConverter="tcComparisonFlagsEx">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output]"
+                  name="Fuzzy Lookup Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[PHU_Group]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[PHU_Group]"
+                      name="PHU_Group">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the reference table column that is copied to the output for each match result."
+                          name="CopyFromReferenceColumn"
+                          state="escaped" />
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
+                          name="SourceInputColumnLineageID">#{Package\NDS_PHU_GROUP\LOAD PHU GROUP.Outputs[OLE DB Source Output].Columns[PHU_Group]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the column is used to indicate confidence or similarity."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[PHU_City]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[PHU_City]"
+                      name="PHU_City">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the reference table column that is copied to the output for each match result."
+                          name="CopyFromReferenceColumn"
+                          state="escaped" />
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
+                          name="SourceInputColumnLineageID">#{Package\NDS_PHU_GROUP\LOAD PHU GROUP.Outputs[OLE DB Source Output].Columns[PHU_City]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the column is used to indicate confidence or similarity."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[PHU_region]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[PHU_region]"
+                      name="PHU_region">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the reference table column that is copied to the output for each match result."
+                          name="CopyFromReferenceColumn"
+                          state="escaped" />
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
+                          name="SourceInputColumnLineageID">#{Package\NDS_PHU_GROUP\LOAD PHU GROUP.Outputs[OLE DB Source Output].Columns[PHU_region]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the column is used to indicate confidence or similarity."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[Created Date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[Created Date]"
+                      name="Created Date">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the reference table column that is copied to the output for each match result."
+                          name="CopyFromReferenceColumn"
+                          state="escaped" />
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
+                          name="SourceInputColumnLineageID">#{Package\NDS_PHU_GROUP\LOAD PHU GROUP.Outputs[OLE DB Source Output].Columns[Created Date]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the column is used to indicate confidence or similarity."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[Updated Date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[Updated Date]"
+                      name="Updated Date">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the reference table column that is copied to the output for each match result."
+                          name="CopyFromReferenceColumn"
+                          state="escaped" />
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
+                          name="SourceInputColumnLineageID">#{Package\NDS_PHU_GROUP\LOAD PHU GROUP.Outputs[OLE DB Source Output].Columns[Updated Date]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the column is used to indicate confidence or similarity."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[Status]"
+                      dataType="r8"
+                      lineageId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[Status]"
+                      name="Status">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the reference table column that is copied to the output for each match result."
+                          name="CopyFromReferenceColumn"
+                          state="escaped" />
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
+                          name="SourceInputColumnLineageID">#{Package\NDS_PHU_GROUP\LOAD PHU GROUP.Outputs[OLE DB Source Output].Columns[Status]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the column is used to indicate confidence or similarity."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[SOR]"
+                      dataType="i4"
+                      lineageId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[SOR]"
+                      name="SOR">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the reference table column that is copied to the output for each match result."
+                          name="CopyFromReferenceColumn"
+                          state="escaped" />
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
+                          name="SourceInputColumnLineageID">#{Package\NDS_PHU_GROUP\ADD SOR.Outputs[Derived Column Output].Columns[SOR]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the column is used to indicate confidence or similarity."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[PHU_SK]"
+                      dataType="i4"
+                      lineageId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[PHU_SK]"
+                      name="PHU_SK">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the reference table column that is copied to the output for each match result."
+                          name="CopyFromReferenceColumn"
+                          state="escaped">PHU_SK</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
+                          name="SourceInputColumnLineageID" />
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the column is used to indicate confidence or similarity."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[_Similarity]"
+                      dataType="r4"
+                      lineageId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[_Similarity]"
+                      name="_Similarity">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the column is used to indicate confidence or similarity."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[_Confidence]"
+                      dataType="r4"
+                      lineageId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[_Confidence]"
+                      name="_Confidence">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the column is used to indicate confidence or similarity."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">2</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[_Similarity_Reporting_PHU_City]"
+                      dataType="r4"
+                      description="Column-level similarity score for fuzzy join on column &quot;PHU_City&quot;."
+                      lineageId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[_Similarity_Reporting_PHU_City]"
+                      name="_Similarity_Reporting_PHU_City">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the reference table column that is copied to the output for each match result."
+                          name="CopyFromReferenceColumn"
+                          state="escaped" />
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
+                          name="SourceInputColumnLineageID">#{Package\NDS_PHU_GROUP\LOAD PHU GROUP.Outputs[OLE DB Source Output].Columns[PHU_City]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the column is used to indicate confidence or similarity."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">3</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[_Similarity_Reporting_PHU]"
+                      dataType="r4"
+                      description="Column-level similarity score for fuzzy join on column &quot;PHU_region&quot;."
+                      lineageId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[_Similarity_Reporting_PHU]"
+                      name="_Similarity_Reporting_PHU">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the reference table column that is copied to the output for each match result."
+                          name="CopyFromReferenceColumn"
+                          state="escaped" />
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
+                          name="SourceInputColumnLineageID">#{Package\NDS_PHU_GROUP\LOAD PHU GROUP.Outputs[OLE DB Source Output].Columns[PHU_region]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the column is used to indicate confidence or similarity."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">3</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\NDS_PHU_GROUP\INSERT ROW"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -6667,39 +7256,45 @@ WHERE PHU_SK=?</property>
                       cachedDataType="i4"
                       cachedName="SOR"
                       externalMetadataColumnId="Package\NDS_PHU_GROUP\INSERT ROW.Inputs[OLE DB Destination Input].ExternalColumns[SOR]"
-                      lineageId="Package\NDS_PHU_GROUP\ADD SOR.Outputs[Derived Column Output].Columns[SOR]" />
+                      lineageId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[SOR]" />
                     <inputColumn
                       refId="Package\NDS_PHU_GROUP\INSERT ROW.Inputs[OLE DB Destination Input].Columns[PHU_City]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="PHU_City"
                       externalMetadataColumnId="Package\NDS_PHU_GROUP\INSERT ROW.Inputs[OLE DB Destination Input].ExternalColumns[PHU_CITY]"
-                      lineageId="Package\NDS_PHU_GROUP\LOAD PHU GROUP.Outputs[OLE DB Source Output].Columns[PHU_City]" />
+                      lineageId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[PHU_City]" />
                     <inputColumn
                       refId="Package\NDS_PHU_GROUP\INSERT ROW.Inputs[OLE DB Destination Input].Columns[Created Date]"
                       cachedDataType="dbTimeStamp"
                       cachedName="Created Date"
                       externalMetadataColumnId="Package\NDS_PHU_GROUP\INSERT ROW.Inputs[OLE DB Destination Input].ExternalColumns[CREATED_DATE]"
-                      lineageId="Package\NDS_PHU_GROUP\LOAD PHU GROUP.Outputs[OLE DB Source Output].Columns[Created Date]" />
+                      lineageId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[Created Date]" />
                     <inputColumn
                       refId="Package\NDS_PHU_GROUP\INSERT ROW.Inputs[OLE DB Destination Input].Columns[Updated Date]"
                       cachedDataType="dbTimeStamp"
                       cachedName="Updated Date"
                       externalMetadataColumnId="Package\NDS_PHU_GROUP\INSERT ROW.Inputs[OLE DB Destination Input].ExternalColumns[UPDATED_DATE]"
-                      lineageId="Package\NDS_PHU_GROUP\LOAD PHU GROUP.Outputs[OLE DB Source Output].Columns[Updated Date]" />
+                      lineageId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[Updated Date]" />
                     <inputColumn
                       refId="Package\NDS_PHU_GROUP\INSERT ROW.Inputs[OLE DB Destination Input].Columns[Status]"
                       cachedDataType="r8"
                       cachedName="Status"
                       externalMetadataColumnId="Package\NDS_PHU_GROUP\INSERT ROW.Inputs[OLE DB Destination Input].ExternalColumns[STATUS]"
-                      lineageId="Package\NDS_PHU_GROUP\LOAD PHU GROUP.Outputs[OLE DB Source Output].Columns[Status]" />
+                      lineageId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[Status]" />
                     <inputColumn
                       refId="Package\NDS_PHU_GROUP\INSERT ROW.Inputs[OLE DB Destination Input].Columns[PHU_Group]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="PHU_Group"
                       externalMetadataColumnId="Package\NDS_PHU_GROUP\INSERT ROW.Inputs[OLE DB Destination Input].ExternalColumns[PHU_GROUP]"
-                      lineageId="Package\NDS_PHU_GROUP\LOAD PHU GROUP.Outputs[OLE DB Source Output].Columns[PHU_Group]" />
+                      lineageId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[PHU_Group]" />
+                    <inputColumn
+                      refId="Package\NDS_PHU_GROUP\INSERT ROW.Inputs[OLE DB Destination Input].Columns[PHU_SK]"
+                      cachedDataType="i4"
+                      cachedName="PHU_SK"
+                      externalMetadataColumnId="Package\NDS_PHU_GROUP\INSERT ROW.Inputs[OLE DB Destination Input].ExternalColumns[PHU_SK]"
+                      lineageId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[PHU_SK]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -6816,8 +7411,8 @@ WHERE PHU_SK=?</property>
               <connections>
                 <connection
                   refId="Package\NDS_PHU_GROUP\LOAD PHU GROUP.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-L93DHEQ.COVID_DB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-L93DHEQ.COVID_DB]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-8V127BM\PSTUNG.COVID_DB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-8V127BM\PSTUNG.COVID_DB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -6977,183 +7572,6 @@ WHERE PHU_SK=?</property>
               </outputs>
             </component>
             <component
-              refId="Package\NDS_PHU_GROUP\LOOK UP PHU_SK IN PHU"
-              componentClassID="Microsoft.Lookup"
-              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
-              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-              name="LOOK UP PHU_SK IN PHU"
-              usesDispositions="true"
-              version="6">
-              <properties>
-                <property
-                  dataType="System.String"
-                  description="Specifies the SQL statement that generates the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT PHU_SK, Reporting_PHU, Reporting_PHU_City
-FROM     PHU</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT PHU_SK, Reporting_PHU, Reporting_PHU_City
-FROM     PHU) [refTable]
-where [refTable].[Reporting_PHU_City] = ? and [refTable].[Reporting_PHU] = ?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the type of connection used to access the reference dataset."
-                  name="ConnectionType"
-                  typeConverter="LookupConnectionType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the cache type of the lookup table."
-                  name="CacheType"
-                  typeConverter="CacheType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
-                  name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">1</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
-                  name="NoMatchCachePercentage">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
-                  name="MaxMemoryUsage">25</property>
-                <property
-                  dataType="System.Int64"
-                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
-                  name="MaxMemoryUsage64">25</property>
-                <property
-                  dataType="System.String"
-                  description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PHU_SK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Reporting_PHU" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Reporting_PHU_City" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
-                <property
-                  containsID="true"
-                  dataType="System.String"
-                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\NDS_PHU_GROUP\LOAD PHU GROUP.Outputs[OLE DB Source Output].Columns[PHU_City]};#{Package\NDS_PHU_GROUP\LOAD PHU GROUP.Outputs[OLE DB Source Output].Columns[PHU_region]};</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
-                  name="TreatDuplicateKeysAsError">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\NDS_PHU_GROUP\LOOK UP PHU_SK IN PHU.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-L93DHEQ.COVID_19_NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-L93DHEQ.COVID_19_NDS]"
-                  description="Connection manager used to access lookup data."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\NDS_PHU_GROUP\LOOK UP PHU_SK IN PHU.Inputs[Lookup Input]"
-                  name="Lookup Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\NDS_PHU_GROUP\LOOK UP PHU_SK IN PHU.Inputs[Lookup Input].Columns[PHU_region]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="PHU_region"
-                      lineageId="Package\NDS_PHU_GROUP\LOAD PHU GROUP.Outputs[OLE DB Source Output].Columns[PHU_region]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">Reporting_PHU</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\NDS_PHU_GROUP\LOOK UP PHU_SK IN PHU.Inputs[Lookup Input].Columns[PHU_City]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="PHU_City"
-                      lineageId="Package\NDS_PHU_GROUP\LOAD PHU GROUP.Outputs[OLE DB Source Output].Columns[PHU_City]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">Reporting_PHU_City</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\NDS_PHU_GROUP\LOOK UP PHU_SK IN PHU.Outputs[Lookup Match Output]"
-                  errorOrTruncationOperation="Lookup"
-                  exclusionGroup="1"
-                  name="Lookup Match Output"
-                  synchronousInputId="Package\NDS_PHU_GROUP\LOOK UP PHU_SK IN PHU.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\NDS_PHU_GROUP\LOOK UP PHU_SK IN PHU.Outputs[Lookup Match Output].Columns[PHU_SK_NDS]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Copy Column"
-                      lineageId="Package\NDS_PHU_GROUP\LOOK UP PHU_SK IN PHU.Outputs[Lookup Match Output].Columns[PHU_SK_NDS]"
-                      name="PHU_SK_NDS"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">PHU_SK</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\NDS_PHU_GROUP\LOOK UP PHU_SK IN PHU.Outputs[Lookup No Match Output]"
-                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
-                  exclusionGroup="1"
-                  name="Lookup No Match Output"
-                  synchronousInputId="Package\NDS_PHU_GROUP\LOOK UP PHU_SK IN PHU.Inputs[Lookup Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\NDS_PHU_GROUP\LOOK UP PHU_SK IN PHU.Outputs[Lookup Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Lookup Error Output"
-                  synchronousInputId="Package\NDS_PHU_GROUP\LOOK UP PHU_SK IN PHU.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\NDS_PHU_GROUP\LOOK UP PHU_SK IN PHU.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\NDS_PHU_GROUP\LOOK UP PHU_SK IN PHU.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\NDS_PHU_GROUP\LOOK UP PHU_SK IN PHU.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\NDS_PHU_GROUP\LOOK UP PHU_SK IN PHU.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\NDS_PHU_GROUP\LOOKUP PHU_GROUP_SK IN PHU_GROUP"
               componentClassID="Microsoft.Lookup"
               contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
@@ -7176,7 +7594,7 @@ FROM     PHU_GROUP</property>
                   name="SqlCommandParam"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT PHU_GROUP_SK, PHU_SK, PHU_GROUP
 FROM     PHU_GROUP) [refTable]
-where [refTable].[PHU_GROUP] = ? and [refTable].[PHU_SK] = ?</property>
+where [refTable].[PHU_SK] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -7212,7 +7630,7 @@ where [refTable].[PHU_GROUP] = ? and [refTable].[PHU_SK] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\NDS_PHU_GROUP\LOAD PHU GROUP.Outputs[OLE DB Source Output].Columns[PHU_Group]};#{Package\NDS_PHU_GROUP\LOOK UP PHU_SK IN PHU.Outputs[Lookup Match Output].Columns[PHU_SK_NDS]};</property>
+                  name="ParameterMap">#{Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[PHU_SK]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -7236,32 +7654,15 @@ where [refTable].[PHU_GROUP] = ? and [refTable].[PHU_SK] = ?</property>
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\NDS_PHU_GROUP\LOOKUP PHU_GROUP_SK IN PHU_GROUP.Inputs[Lookup Input].Columns[PHU_SK_NDS]"
+                      refId="Package\NDS_PHU_GROUP\LOOKUP PHU_GROUP_SK IN PHU_GROUP.Inputs[Lookup Input].Columns[PHU_SK]"
                       cachedDataType="i4"
-                      cachedName="PHU_SK_NDS"
-                      lineageId="Package\NDS_PHU_GROUP\LOOK UP PHU_SK IN PHU.Outputs[Lookup Match Output].Columns[PHU_SK_NDS]">
+                      cachedName="PHU_SK"
+                      lineageId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[PHU_SK]">
                       <properties>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table that a column joins."
                           name="JoinToReferenceColumn">PHU_SK</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\NDS_PHU_GROUP\LOOKUP PHU_GROUP_SK IN PHU_GROUP.Inputs[Lookup Input].Columns[PHU_Group]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="PHU_Group"
-                      lineageId="Package\NDS_PHU_GROUP\LOAD PHU GROUP.Outputs[OLE DB Source Output].Columns[PHU_Group]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">PHU_GROUP</property>
                         <property
                           dataType="System.Null"
                           description="Specifies the column in the reference table from which a column is copied."
@@ -7376,26 +7777,26 @@ WHERE PHU_SK=?</property>
                       cachedDataType="dbTimeStamp"
                       cachedName="Updated Date"
                       externalMetadataColumnId="Package\NDS_PHU_GROUP\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\NDS_PHU_GROUP\LOAD PHU GROUP.Outputs[OLE DB Source Output].Columns[Updated Date]" />
+                      lineageId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[Updated Date]" />
                     <inputColumn
                       refId="Package\NDS_PHU_GROUP\OLE DB Command.Inputs[OLE DB Command Input].Columns[Status]"
                       cachedDataType="r8"
                       cachedName="Status"
                       externalMetadataColumnId="Package\NDS_PHU_GROUP\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\NDS_PHU_GROUP\LOAD PHU GROUP.Outputs[OLE DB Source Output].Columns[Status]" />
+                      lineageId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[Status]" />
                     <inputColumn
                       refId="Package\NDS_PHU_GROUP\OLE DB Command.Inputs[OLE DB Command Input].Columns[PHU_Group]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="PHU_Group"
                       externalMetadataColumnId="Package\NDS_PHU_GROUP\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      lineageId="Package\NDS_PHU_GROUP\LOAD PHU GROUP.Outputs[OLE DB Source Output].Columns[PHU_Group]" />
+                      lineageId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[PHU_Group]" />
                     <inputColumn
-                      refId="Package\NDS_PHU_GROUP\OLE DB Command.Inputs[OLE DB Command Input].Columns[PHU_SK_NDS]"
+                      refId="Package\NDS_PHU_GROUP\OLE DB Command.Inputs[OLE DB Command Input].Columns[PHU_SK]"
                       cachedDataType="i4"
-                      cachedName="PHU_SK_NDS"
+                      cachedName="PHU_SK"
                       externalMetadataColumnId="Package\NDS_PHU_GROUP\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                      lineageId="Package\NDS_PHU_GROUP\LOOK UP PHU_SK IN PHU.Outputs[Lookup Match Output].Columns[PHU_SK_NDS]" />
+                      lineageId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[PHU_SK]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -7498,7 +7899,7 @@ WHERE PHU_SK=?</property>
                       cachedName="Updated Date"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\NDS_PHU_GROUP\LOAD PHU GROUP.Outputs[OLE DB Source Output].Columns[Updated Date]"
+                      lineageId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[Updated Date]"
                       truncationRowDisposition="FailComponent"
                       usageType="readWrite">
                       <properties>
@@ -7572,7 +7973,7 @@ WHERE PHU_SK=?</property>
                       cachedName="Created Date"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\NDS_PHU_GROUP\LOAD PHU GROUP.Outputs[OLE DB Source Output].Columns[Created Date]"
+                      lineageId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[Created Date]"
                       truncationRowDisposition="FailComponent"
                       usageType="readWrite">
                       <properties>
@@ -7595,7 +7996,7 @@ WHERE PHU_SK=?</property>
                       cachedName="Updated Date"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\NDS_PHU_GROUP\LOAD PHU GROUP.Outputs[OLE DB Source Output].Columns[Updated Date]"
+                      lineageId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[Updated Date]"
                       truncationRowDisposition="FailComponent"
                       usageType="readWrite">
                       <properties>
@@ -7664,16 +8065,16 @@ WHERE PHU_SK=?</property>
               startId="Package\NDS_PHU_GROUP\UPDATED DATE.Outputs[Derived Column Output]" />
             <path
               refId="Package\NDS_PHU_GROUP.Paths[Derived Column Output2]"
-              endId="Package\NDS_PHU_GROUP\LOOK UP PHU_SK IN PHU.Inputs[Lookup Input]"
+              endId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Inputs[Fuzzy Lookup Input]"
               name="Derived Column Output"
               startId="Package\NDS_PHU_GROUP\ADD SOR.Outputs[Derived Column Output]" />
             <path
-              refId="Package\NDS_PHU_GROUP.Paths[Lookup Match Output]"
+              refId="Package\NDS_PHU_GROUP.Paths[Fuzzy Lookup Output]"
               endId="Package\NDS_PHU_GROUP\LOOKUP PHU_GROUP_SK IN PHU_GROUP.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\NDS_PHU_GROUP\LOOK UP PHU_SK IN PHU.Outputs[Lookup Match Output]" />
+              name="Fuzzy Lookup Output"
+              startId="Package\NDS_PHU_GROUP\Fuzzy Lookup.Outputs[Fuzzy Lookup Output]" />
             <path
-              refId="Package\NDS_PHU_GROUP.Paths[Lookup Match Output1]"
+              refId="Package\NDS_PHU_GROUP.Paths[Lookup Match Output]"
               endId="Package\NDS_PHU_GROUP\UPDATED DATE.Inputs[Derived Column Input]"
               name="Lookup Match Output"
               startId="Package\NDS_PHU_GROUP\LOOKUP PHU_GROUP_SK IN PHU_GROUP.Outputs[Lookup Match Output]" />
@@ -13930,7 +14331,7 @@ WHERE VACCINATION_SK=?</property>
         <NodeLayout
           Size="164.8,41.6"
           Id="Package\NDS_PHU_GROUP"
-          TopLeft="697.698422952844,521.934647686983" />
+          TopLeft="683.412708423846,441.64052891383" />
         <NodeLayout
           Size="321.6,41.6"
           Id="Package\NDS_Reported Case_From_Canada_Compiled_Case"
@@ -13938,7 +14339,7 @@ WHERE VACCINATION_SK=?</property>
         <NodeLayout
           Size="313.6,41.6"
           Id="Package\NDS_Reported Case_From_Ontario_Cases_Report"
-          TopLeft="638.666666666667,314" />
+          TopLeft="612.95238051447,313.235294106922" />
         <NodeLayout
           Size="153.6,41.6"
           Id="Package\NDS_VACCINES"
@@ -14035,30 +14436,18 @@ WHERE VACCINATION_SK=?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="762.577777777778,114.6">
+          TopLeft="766.165079146124,114.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="32.8888888888889,199.4"
+              EndConnector="0,198.635294106922"
               Start="0,0"
-              End="32.8888888888889,191.9">
+              End="0,191.135294106922">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,95.7" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,95.7"
-                    Point2="0,99.7"
-                    Point3="4,99.7" />
-                  <mssgle:LineSegment
-                    End="28.8888888888889,99.7" />
-                  <mssgle:CubicBezierSegment
-                    Point1="28.8888888888889,99.7"
-                    Point2="32.8888888888889,99.7"
-                    Point3="32.8888888888889,103.7" />
-                  <mssgle:LineSegment
-                    End="32.8888888888889,191.9" />
+                    End="0,191.135294106922" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14159,30 +14548,18 @@ WHERE VACCINATION_SK=?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="795.466666666667,355.6">
+          TopLeft="767.782544469158,354.835294106922">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-15.3682437138225,166.334647686983"
+              EndConnector="0,86.8052348069079"
               Start="0,0"
-              End="-15.3682437138225,158.834647686983">
+              End="0,79.3052348069079">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,79.1673238434915" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,79.1673238434915"
-                    Point2="0,83.1673238434915"
-                    Point3="-4,83.1673238434915" />
-                  <mssgle:LineSegment
-                    End="-11.3682437138225,83.1673238434915" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-11.3682437138225,83.1673238434915"
-                    Point2="-15.3682437138225,83.1673238434915"
-                    Point3="-15.3682437138225,87.1673238434915" />
-                  <mssgle:LineSegment
-                    End="-15.3682437138225,158.834647686983" />
+                    End="0,79.3052348069079" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14302,7 +14679,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14336,7 +14715,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14358,7 +14739,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14392,7 +14775,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14426,7 +14811,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14632,7 +15019,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14726,7 +15115,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14760,7 +15151,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14782,7 +15175,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14816,7 +15211,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -15007,7 +15404,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15041,7 +15440,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15075,7 +15476,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15109,7 +15512,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -15228,7 +15633,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15334,7 +15741,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15368,7 +15777,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15402,7 +15813,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -15525,7 +15938,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15559,7 +15974,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15665,7 +16082,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15699,7 +16118,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15733,7 +16154,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -15802,60 +16225,38 @@ WHERE VACCINATION_SK=?</property>
           Id="Package\NDS_PHU_GROUP\INSERT ROW"
           TopLeft="469,490" />
         <NodeLayout
-          Size="234.4,41.6"
-          Id="Package\NDS_PHU_GROUP\UPDATED DATE, CREATED DATE"
-          TopLeft="425.5,391.061101549053" />
+          Size="142.4,41.6"
+          Id="Package\NDS_PHU_GROUP\Fuzzy Lookup"
+          TopLeft="245.000004172325,224.388235905426" />
         <NodeLayout
           Size="165.6,41.6"
           Id="Package\NDS_PHU_GROUP\LOAD PHU GROUP"
           TopLeft="215.5,57.5" />
         <NodeLayout
-          Size="200.8,41.6"
-          Id="Package\NDS_PHU_GROUP\LOOK UP PHU_SK IN PHU"
-          TopLeft="220.5,225.5" />
-        <NodeLayout
           Size="277.6,41.6"
           Id="Package\NDS_PHU_GROUP\LOOKUP PHU_GROUP_SK IN PHU_GROUP"
           TopLeft="186,300.8" />
+        <NodeLayout
+          Size="153.6,41.6"
+          Id="Package\NDS_PHU_GROUP\UPDATED DATE"
+          TopLeft="108,398" />
         <NodeLayout
           Size="123.2,41.6"
           Id="Package\NDS_PHU_GROUP\ADD SOR"
           TopLeft="239.5,152.5" />
         <NodeLayout
-          Size="153.6,41.6"
-          Id="Package\NDS_PHU_GROUP\UPDATED DATE"
-          TopLeft="108,398" />
-        <EdgeLayout
-          Id="Package\NDS_PHU_GROUP.Paths[OLE DB Source Output]"
-          TopLeft="299.7,99.1">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,53.4"
-              Start="0,0"
-              End="0,45.9">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,45.9" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="234.4,41.6"
+          Id="Package\NDS_PHU_GROUP\UPDATED DATE, CREATED DATE"
+          TopLeft="425.5,391.061101549053" />
         <EdgeLayout
           Id="Package\NDS_PHU_GROUP.Paths[Lookup No Match Output]"
           TopLeft="369.733333333333,342.4">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="172.966666666667,48.661101549053"
+              EndConnector="172.966666666667,48.6611015490529"
               Start="0,0"
-              End="172.966666666667,41.161101549053">
+              End="172.966666666667,41.1611015490529">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -15872,26 +16273,26 @@ WHERE VACCINATION_SK=?</property>
                     Point2="172.966666666667,19.6317567280993"
                     Point3="172.966666666667,23.6317567280993" />
                   <mssgle:LineSegment
-                    End="172.966666666667,41.161101549053" />
+                    End="172.966666666667,41.1611015490529" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="30.6769466145833,24.6317567280993,111.6127734375,11.609375"
+              BoundingBox="30.6769466145834,24.6317567280993,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\NDS_PHU_GROUP.Paths[Lookup Match Output1]"
+          Id="Package\NDS_PHU_GROUP.Paths[Lookup Match Output]"
           TopLeft="279.866666666667,342.4">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-95.0666666666668,55.6"
+              EndConnector="-95.0666666666667,55.6"
               Start="0,0"
-              End="-95.0666666666668,48.1">
+              End="-95.0666666666667,48.1">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -15902,45 +16303,55 @@ WHERE VACCINATION_SK=?</property>
                     Point2="0,22.4311747851003"
                     Point3="-4,22.4311747851003" />
                   <mssgle:LineSegment
-                    End="-91.0666666666668,22.4311747851003" />
+                    End="-91.0666666666667,22.4311747851003" />
                   <mssgle:CubicBezierSegment
-                    Point1="-91.0666666666668,22.4311747851003"
-                    Point2="-95.0666666666668,22.4311747851003"
-                    Point3="-95.0666666666668,26.4311747851003" />
+                    Point1="-91.0666666666667,22.4311747851003"
+                    Point2="-95.0666666666667,22.4311747851003"
+                    Point3="-95.0666666666667,26.4311747851003" />
                   <mssgle:LineSegment
-                    End="-95.0666666666668,48.1" />
+                    End="-95.0666666666667,48.1" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-95.7247200520834,27.4311747851003,96.3827734375,11.609375"
+              BoundingBox="-95.7247200520833,27.4311747851003,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\NDS_PHU_GROUP.Paths[Lookup Match Output]"
-          TopLeft="322.85,267.1">
+          Id="Package\NDS_PHU_GROUP.Paths[Fuzzy Lookup Output]"
+          TopLeft="316.200004172325,265.988235905426">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,33.6999999999999"
+              EndConnector="8.599995827675,34.811764094574"
               Start="0,0"
-              End="0,26.1999999999999">
+              End="8.599995827675,27.311764094574">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.1999999999999" />
+                    End="0,13.405882047287" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.405882047287"
+                    Point2="0,17.405882047287"
+                    Point3="4,17.405882047287" />
+                  <mssgle:LineSegment
+                    End="4.599995827675,17.405882047287" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.599995827675,17.405882047287"
+                    Point2="8.599995827675,17.405882047287"
+                    Point3="8.599995827675,21.405882047287" />
+                  <mssgle:LineSegment
+                    End="8.599995827675,27.311764094574" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,7.29531249999997,96.3827734375,11.609375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15949,26 +16360,26 @@ WHERE VACCINATION_SK=?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="19.8,31.4"
+              EndConnector="15.1000041723252,30.2882359054261"
               Start="0,0"
-              End="19.8,23.9">
+              End="15.1000041723252,22.7882359054261">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,11.7" />
+                    End="0,11.1441179527131" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,11.7"
-                    Point2="0,15.7"
-                    Point3="4,15.7" />
+                    Point1="0,11.1441179527131"
+                    Point2="0,15.1441179527131"
+                    Point3="4,15.1441179527131" />
                   <mssgle:LineSegment
-                    End="15.8,15.7" />
+                    End="11.1000041723252,15.1441179527131" />
                   <mssgle:CubicBezierSegment
-                    Point1="15.8,15.7"
-                    Point2="19.8,15.7"
-                    Point3="19.8,19.7" />
+                    Point1="11.1000041723252,15.1441179527131"
+                    Point2="15.1000041723252,15.1441179527131"
+                    Point3="15.1000041723252,19.1441179527131" />
                   <mssgle:LineSegment
-                    End="19.8,23.9" />
+                    End="15.1000041723252,22.7882359054261" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -16033,11 +16444,46 @@ WHERE VACCINATION_SK=?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\NDS_PHU_GROUP.Paths[OLE DB Source Output]"
+          TopLeft="299.7,99.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53.4"
+              Start="0,0"
+              End="0,45.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\NDS_PHU_GROUP\INSERT ROW">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\NDS_PHU_GROUP\Fuzzy Lookup">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -16063,35 +16509,12 @@ WHERE VACCINATION_SK=?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\NDS_PHU_GROUP\LOOK UP PHU_SK IN PHU">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\NDS_PHU_GROUP\LOOKUP PHU_GROUP_SK IN PHU_GROUP">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -16101,7 +16524,7 @@ WHERE VACCINATION_SK=?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -16172,7 +16595,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16278,7 +16703,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16300,7 +16727,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16334,7 +16763,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16356,7 +16787,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16390,7 +16823,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16412,7 +16847,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -16543,7 +16980,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16685,7 +17124,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16707,7 +17148,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16729,7 +17172,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16751,7 +17196,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16773,7 +17220,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16795,7 +17244,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -16940,7 +17391,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17070,7 +17523,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17104,7 +17559,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17138,7 +17595,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17172,7 +17631,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
