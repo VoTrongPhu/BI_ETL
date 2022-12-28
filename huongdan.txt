@@ -23,4 +23,10 @@ DESKTOP-L93DHEQ
 An OLE DB record is available.  Source: "Microsoft SQL Server Native Client 11.0"  Hresult: 0x80004005  Description: "Invalid character value for cast specification".
 An OLE DB record is available.  Source: "Microsoft SQL Server Native Client 11.0"  Hresult: 0x80004005  Description: "Invalid character value for cast specification".
 
-
+---Hướng dẫn sử dụng sau khi Tùng update:
+1. Sửa source:
+	- PHU_GROUP.xls: bỏ cột ID
+2. Sửa Stage:
+	- alter table ontario_phu_group drop column phu_group_id
+3. Sửa NDS (đối với người đã có NDS trong máy, người chưa có NDS thì chạy file NDS_2.sql):
+	- Chạy file script NDS bổ sung

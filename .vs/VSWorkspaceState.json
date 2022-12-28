@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\SQL Script"
   ],
-  "SelectedNode": "\\COVID_ETL.sln",
+  "SelectedNode": "\\SQL Script\\Covid_19_NDS_BoSung.sql",
   "PreviewInSolutionExplorer": false
 }
