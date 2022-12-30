@@ -2,28 +2,23 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>COVID_ETL</Name>
-    <LastWriteTime>2022-12-29T13:18:30.0280677Z</LastWriteTime>
+    <LastWriteTime>2022-12-29T04:28:59.0855216Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>Package.dtsx</Name>
-      <LastWriteTime>2022-12-29T13:18:29.9880698Z</LastWriteTime>
+      <LastWriteTime>2022-12-29T04:07:39.1967296Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>NDS.dtsx</Name>
-      <LastWriteTime>2022-12-29T13:21:00.0749437Z</LastWriteTime>
+      <LastWriteTime>2022-12-29T14:31:34.5970605Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DDS_DIM.dtsx</Name>
-      <LastWriteTime>2022-12-29T13:47:56.5134495Z</LastWriteTime>
-      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
-    </ProjectBuildItemInfo>
-    <ProjectBuildItemInfo>
-      <Name>DDS_FACT.dtsx</Name>
-      <LastWriteTime>2022-12-29T11:23:59.0449499Z</LastWriteTime>
+      <LastWriteTime>2022-12-29T19:12:41.8852853Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

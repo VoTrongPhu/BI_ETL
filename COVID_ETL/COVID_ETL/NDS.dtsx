@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package2"
   DTS:PackageType="5"
-  DTS:VersionBuild="63"
-  DTS:VersionGUID="{65E17747-5D4D-4199-9764-D66A709E58E5}">
+  DTS:VersionBuild="65"
+  DTS:VersionGUID="{10DA0975-D1F2-4379-A668-B9B9972F37BE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-8V127BM\PSTUNG;Initial Catalog=COVID_DB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package2-{850AAACC-6F4E-4C29-822C-68048AA3F394}DESKTOP-8V127BM\PSTUNG.COVID_DB;" />
+          DTS:ConnectionString="Data Source=DESKTOP-L93DHEQ;Initial Catalog=COVID_DB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package2-{850AAACC-6F4E-4C29-822C-68048AA3F394}DESKTOP-8V127BM\PSTUNG.COVID_DB;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-8V127BM\PSTUNG;Initial Catalog=COVID_19_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package2-{93ABCB4A-3116-4433-AB2B-F959EB63A361}DESKTOP-L93DHEQ.COVID_19_NDS;" />
+          DTS:ConnectionString="Data Source=DESKTOP-L93DHEQ;Initial Catalog=COVID_19_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package2-{93ABCB4A-3116-4433-AB2B-F959EB63A361}DESKTOP-L93DHEQ.COVID_19_NDS;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -49,7 +49,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-8V127BM\PSTUNG;Initial Catalog=COVID_DB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package2-{F73CC8C5-76D5-44E1-A704-147E6CE195E1}DESKTOP-L93DHEQ.COVID_DB;" />
+          DTS:ConnectionString="Data Source=DESKTOP-L93DHEQ;Initial Catalog=COVID_DB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package2-{F73CC8C5-76D5-44E1-A704-147E6CE195E1}DESKTOP-L93DHEQ.COVID_DB;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -61,7 +61,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-8V127BM\PSTUNG;Initial Catalog=COVID_19_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package2-{92F80DCB-6145-4EAD-BC4F-558846E8DC96}LAPTOP-A0V0BIVE.COVID_19_NDS;" />
+          DTS:ConnectionString="Data Source=DESKTOP-L93DHEQ;Initial Catalog=COVID_19_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package2-{92F80DCB-6145-4EAD-BC4F-558846E8DC96}LAPTOP-A0V0BIVE.COVID_19_NDS;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -73,7 +73,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-8V127BM\PSTUNG;Initial Catalog=COVID_DB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package2-{FCBF3A82-ADA2-46AB-9A6B-5715DC8BE2ED}LAPTOP-A0V0BIVE.COVID_DB;" />
+          DTS:ConnectionString="Data Source=DESKTOP-L93DHEQ;Initial Catalog=COVID_DB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package2-{FCBF3A82-ADA2-46AB-9A6B-5715DC8BE2ED}LAPTOP-A0V0BIVE.COVID_DB;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -2274,7 +2274,7 @@ WHERE PHU_SK = ?</property>
                     <externalMetadataColumn
                       refId="Package\NDS_PHU\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
                       dataType="wstr"
-                      length="255"
+                      length="10"
                       name="Param_5">
                       <properties>
                         <property
@@ -4955,7 +4955,7 @@ WHERE PHU_SK = ?</property>
                       cachedDataType="i4"
                       cachedName="PHU_SK_NDS"
                       externalMetadataColumnId="Package\NDS_PHU_FROM_CASE_REPORT\UPDATE EXISTING ROW.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
-                      lineageId="Package\NDS_PHU_FROM_CASE_REPORT\405:invalid" />
+                      lineageId="Package\NDS_PHU_FROM_CASE_REPORT\493:invalid" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -8527,6 +8527,12 @@ WHERE PHU_SK=?</property>
                       externalMetadataColumnId="Package\NDS_Reported Case_From_Canada_Compiled_Case\INSERT ROW.Inputs[OLE DB Destination Input].ExternalColumns[Case_Status]"
                       lineageId="Package\NDS_Reported Case_From_Canada_Compiled_Case\LOOK UP PHU_SK_NDS.Outputs[Fuzzy Lookup Output].Columns[case_status]" />
                     <inputColumn
+                      refId="Package\NDS_Reported Case_From_Canada_Compiled_Case\INSERT ROW.Inputs[OLE DB Destination Input].Columns[date_reported]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="date_reported"
+                      externalMetadataColumnId="Package\NDS_Reported Case_From_Canada_Compiled_Case\INSERT ROW.Inputs[OLE DB Destination Input].ExternalColumns[CaseReported_Date]"
+                      lineageId="Package\NDS_Reported Case_From_Canada_Compiled_Case\LOOK UP PHU_SK_NDS.Outputs[Fuzzy Lookup Output].Columns[date_reported]" />
+                    <inputColumn
                       refId="Package\NDS_Reported Case_From_Canada_Compiled_Case\INSERT ROW.Inputs[OLE DB Destination Input].Columns[Copy of ObjectId]"
                       cachedDataType="i4"
                       cachedName="Copy of ObjectId"
@@ -8629,6 +8635,10 @@ WHERE PHU_SK=?</property>
                       dataType="str"
                       length="50"
                       name="Outcome" />
+                    <externalMetadataColumn
+                      refId="Package\NDS_Reported Case_From_Canada_Compiled_Case\INSERT ROW.Inputs[OLE DB Destination Input].ExternalColumns[date_reported]"
+                      dataType="dbTimeStamp"
+                      name="date_reported" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -8700,7 +8710,7 @@ WHERE PHU_SK=?</property>
                 <property
                   dataType="System.Single"
                   description="Specifies the minimum similarity score required for the match results that the transformation returns."
-                  name="MinSimilarity">0.7</property>
+                  name="MinSimilarity">0.4</property>
                 <property
                   dataType="System.String"
                   description="Specifies the set of white-space and punctuation characters used to separate fuzzy match fields into the words used for matching and scoring a fuzzy lookup."
@@ -8710,7 +8720,7 @@ WHERE PHU_SK=?</property>
                   dataType="System.String"
                   description="Specifies the metadata of the reference table in XML format."
                   name="ReferenceMetadataXml"
-                  state="escaped">_x003C_referenceMetadata_x003E__x003C_referenceColumns_x003E__x003C_referenceColumn_x0020_name_x003D__x0022_PHU_SK_x0022__x0020_dataType_x003D__x0022_DT_I4_x0022__x0020_length_x003D__x0022_0_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_Reporting_PHU_x0022__x0020_dataType_x003D__x0022_DT_WSTR_x0022__x0020_length_x003D__x0022_255_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_Reporting_PHU_Address_x0022__x0020_dataType_x003D__x0022_DT_WSTR_x0022__x0020_length_x003D__x0022_255_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_Reporting_PHU_City_x0022__x0020_dataType_x003D__x0022_DT_WSTR_x0022__x0020_length_x003D__x0022_255_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_Reporting_PHU_Postal_Code_x0022__x0020_dataType_x003D__x0022_DT_WSTR_x0022__x0020_length_x003D__x0022_255_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_Reporting_PHU_Website_x0022__x0020_dataType_x003D__x0022_DT_WSTR_x0022__x0020_length_x003D__x0022_255_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_Reporting_PHU_Latitude_x0022__x0020_dataType_x003D__x0022_DT_R8_x0022__x0020_length_x003D__x0022_0_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_Reporting_PHU_Longitude_x0022__x0020_dataType_x003D__x0022_DT_R8_x0022__x0020_length_x003D__x0022_0_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_PHU_ID_x0022__x0020_dataType_x003D__x0022_DT_I4_x0022__x0020_length_x003D__x0022_0_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_SOR_x0022__x0020_dataType_x003D__x0022_DT_I4_x0022__x0020_length_x003D__x0022_0_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_UpdatedDate_x0022__x0020_dataType_x003D__x0022_DT_DBTIMESTAMP_x0022__x0020_length_x003D__x0022_0_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_CreatedDate_x0022__x0020_dataType_x003D__x0022_DT_DBTIMESTAMP_x0022__x0020_length_x003D__x0022_0_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_Status_x0022__x0020_dataType_x003D__x0022_DT_I4_x0022__x0020_length_x003D__x0022_0_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C__x002F_referenceColumns_x003E__x003C__x002F_referenceMetadata_x003E__x000D__x000A_</property>
+                  state="escaped">_x003C_referenceMetadata_x003E__x003C_referenceColumns_x003E__x003C_referenceColumn_x0020_name_x003D__x0022_PHU_SK_x0022__x0020_dataType_x003D__x0022_DT_I4_x0022__x0020_length_x003D__x0022_0_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_Reporting_PHU_x0022__x0020_dataType_x003D__x0022_DT_WSTR_x0022__x0020_length_x003D__x0022_255_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_Reporting_PHU_Address_x0022__x0020_dataType_x003D__x0022_DT_WSTR_x0022__x0020_length_x003D__x0022_255_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_Reporting_PHU_City_x0022__x0020_dataType_x003D__x0022_DT_WSTR_x0022__x0020_length_x003D__x0022_255_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_Reporting_PHU_Postal_Code_x0022__x0020_dataType_x003D__x0022_DT_WSTR_x0022__x0020_length_x003D__x0022_10_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_Reporting_PHU_Website_x0022__x0020_dataType_x003D__x0022_DT_WSTR_x0022__x0020_length_x003D__x0022_255_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_Reporting_PHU_Latitude_x0022__x0020_dataType_x003D__x0022_DT_R8_x0022__x0020_length_x003D__x0022_0_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_Reporting_PHU_Longitude_x0022__x0020_dataType_x003D__x0022_DT_R8_x0022__x0020_length_x003D__x0022_0_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_PHU_ID_x0022__x0020_dataType_x003D__x0022_DT_I4_x0022__x0020_length_x003D__x0022_0_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_SOR_x0022__x0020_dataType_x003D__x0022_DT_I4_x0022__x0020_length_x003D__x0022_0_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_UpdatedDate_x0022__x0020_dataType_x003D__x0022_DT_DBTIMESTAMP_x0022__x0020_length_x003D__x0022_0_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_CreatedDate_x0022__x0020_dataType_x003D__x0022_DT_DBTIMESTAMP_x0022__x0020_length_x003D__x0022_0_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_Status_x0022__x0020_dataType_x003D__x0022_DT_I4_x0022__x0020_length_x003D__x0022_0_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_PHU_GROUP_x0022__x0020_dataType_x003D__x0022_DT_I4_x0022__x0020_length_x003D__x0022_0_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C__x002F_referenceColumns_x003E__x003C__x002F_referenceMetadata_x003E__x000D__x000A_</property>
                 <property
                   dataType="System.Boolean"
                   description="If true, each input record will be directly compared against EVERY record in the reference table.  This may produce slightly better results, but will be extremely slow unless the number of records in the reference table is very small.  Note that the entire reference table will be loaded into main memory if this option is enabled.  This option is primarily intended for debugging purposes and should be used with care."
@@ -9613,7 +9623,6 @@ WHERE PHU_SK=?</property>
                           name="CopyFromReferenceColumn"
                           state="escaped">PHU_SK</property>
                         <property
-                          containsID="true"
                           dataType="System.Null"
                           description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
                           name="SourceInputColumnLineageID" />
@@ -9874,7 +9883,7 @@ where [refTable].[SOR] = ? and [refTable].[Object_ID] = ?</property>
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[Canada_Compiled_Case]</property>
+                  name="OpenRowset">[dbo].[Ontario_PHU_GROUP]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -9901,7 +9910,7 @@ FROM     Canada_Compiled_Case</property>
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  typeConverter="AccessMode">2</property>
                 <property
                   dataType="System.String"
                   description="The mappings between the parameters in the SQL command and variables."
@@ -10376,7 +10385,7 @@ WHERE Object_SK = ?</property>
                       refId="Package\NDS_Reported Case_From_Canada_Compiled_Case\UPDATE EXISTING ROW.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
                       codePage="1252"
                       dataType="str"
-                      length="10"
+                      length="4"
                       name="Param_5">
                       <properties>
                         <property
@@ -10956,6 +10965,12 @@ WHERE Object_SK = ?</property>
                       cachedLength="50"
                       cachedName="Case_id"
                       lineageId="Package\NDS_Reported Case_From_Ontario_Cases_Report\Source Ontario_Cases_Report.Outputs[OLE DB Source Output].Columns[Case_id]" />
+                    <inputColumn
+                      refId="Package\NDS_Reported Case_From_Ontario_Cases_Report\Convert Case_id.Inputs[Data Conversion Input].Columns[Outcome]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Outcome"
+                      lineageId="Package\NDS_Reported Case_From_Ontario_Cases_Report\Source Ontario_Cases_Report.Outputs[OLE DB Source Output].Columns[Outcome]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -10981,6 +10996,28 @@ WHERE Object_SK = ?</property>
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
                           name="SourceInputColumnLineageID">#{Package\NDS_Reported Case_From_Ontario_Cases_Report\Source Ontario_Cases_Report.Outputs[OLE DB Source Output].Columns[Case_id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\NDS_Reported Case_From_Ontario_Cases_Report\Convert Case_id.Outputs[Data Conversion Output].Columns[Copy of Outcome]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\NDS_Reported Case_From_Ontario_Cases_Report\Convert Case_id.Outputs[Data Conversion Output].Columns[Copy of Outcome]"
+                      name="Copy of Outcome"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\NDS_Reported Case_From_Ontario_Cases_Report\Source Ontario_Cases_Report.Outputs[OLE DB Source Output].Columns[Outcome]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -11267,6 +11304,14 @@ WHERE Object_SK = ?</property>
                       cachedName="Copy of Case_id"
                       externalMetadataColumnId="Package\NDS_Reported Case_From_Ontario_Cases_Report\INSERT ROW.Inputs[OLE DB Destination Input].ExternalColumns[Object_ID]"
                       lineageId="Package\NDS_Reported Case_From_Ontario_Cases_Report\Convert Case_id.Outputs[Data Conversion Output].Columns[Copy of Case_id]" />
+                    <inputColumn
+                      refId="Package\NDS_Reported Case_From_Ontario_Cases_Report\INSERT ROW.Inputs[OLE DB Destination Input].Columns[Copy of Outcome]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of Outcome"
+                      externalMetadataColumnId="Package\NDS_Reported Case_From_Ontario_Cases_Report\INSERT ROW.Inputs[OLE DB Destination Input].ExternalColumns[Outcome]"
+                      lineageId="Package\NDS_Reported Case_From_Ontario_Cases_Report\Convert Case_id.Outputs[Data Conversion Output].Columns[Copy of Outcome]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -12287,7 +12332,7 @@ FROM     Ontario_Cases_Report</property>
                   expressionType="Notify"
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE Reported_Case
-SET UpdatedDate=?, Status=?, PHU_SK=?, CaseReported_Date=?, Age=?, Gender=?, AccurateEpisode_Dt=?, OutbreakRelated=?, SpecimenDate=?, Test_Reported_Date=?
+SET UpdatedDate=?, Status=?, PHU_SK=?, CaseReported_Date=?, Age=?, Gender=?, AccurateEpisode_Dt=?, OutbreakRelated=?, SpecimenDate=?, Test_Reported_Date=?, outcome=?
 WHERE Object_SK = ?</property>
                 <property
                   dataType="System.Int32"
@@ -12353,12 +12398,6 @@ WHERE Object_SK = ?</property>
                       externalMetadataColumnId="Package\NDS_Reported Case_From_Ontario_Cases_Report\UPDATE EXISTING ROW.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
                       lineageId="Package\NDS_Reported Case_From_Ontario_Cases_Report\Source Ontario_Cases_Report.Outputs[OLE DB Source Output].Columns[TestReported Date]" />
                     <inputColumn
-                      refId="Package\NDS_Reported Case_From_Ontario_Cases_Report\UPDATE EXISTING ROW.Inputs[OLE DB Command Input].Columns[Object_SK]"
-                      cachedDataType="i4"
-                      cachedName="Object_SK"
-                      externalMetadataColumnId="Package\NDS_Reported Case_From_Ontario_Cases_Report\UPDATE EXISTING ROW.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
-                      lineageId="Package\NDS_Reported Case_From_Ontario_Cases_Report\Lookup Object_SK.Outputs[Lookup Match Output].Columns[Object_SK]" />
-                    <inputColumn
                       refId="Package\NDS_Reported Case_From_Ontario_Cases_Report\UPDATE EXISTING ROW.Inputs[OLE DB Command Input].Columns[Copy of Age]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -12382,6 +12421,20 @@ WHERE Object_SK = ?</property>
                       cachedName="Copy of OutbreakRelated"
                       externalMetadataColumnId="Package\NDS_Reported Case_From_Ontario_Cases_Report\UPDATE EXISTING ROW.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
                       lineageId="Package\NDS_Reported Case_From_Ontario_Cases_Report\Convert Age, Gender, OutbreakRelated.Outputs[Data Conversion Output].Columns[Copy of OutbreakRelated]" />
+                    <inputColumn
+                      refId="Package\NDS_Reported Case_From_Ontario_Cases_Report\UPDATE EXISTING ROW.Inputs[OLE DB Command Input].Columns[Object_SK]"
+                      cachedDataType="i4"
+                      cachedName="Object_SK"
+                      externalMetadataColumnId="Package\NDS_Reported Case_From_Ontario_Cases_Report\UPDATE EXISTING ROW.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                      lineageId="Package\NDS_Reported Case_From_Ontario_Cases_Report\Lookup Object_SK.Outputs[Lookup Match Output].Columns[Object_SK]" />
+                    <inputColumn
+                      refId="Package\NDS_Reported Case_From_Ontario_Cases_Report\UPDATE EXISTING ROW.Inputs[OLE DB Command Input].Columns[Copy of Outcome]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of Outcome"
+                      externalMetadataColumnId="Package\NDS_Reported Case_From_Ontario_Cases_Report\UPDATE EXISTING ROW.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                      lineageId="Package\NDS_Reported Case_From_Ontario_Cases_Report\Convert Case_id.Outputs[Data Conversion Output].Columns[Copy of Outcome]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -12503,8 +12556,21 @@ WHERE Object_SK = ?</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\NDS_Reported Case_From_Ontario_Cases_Report\UPDATE EXISTING ROW.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
-                      dataType="i4"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
                       name="Param_10">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\NDS_Reported Case_From_Ontario_Cases_Report\UPDATE EXISTING ROW.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                      dataType="i4"
+                      name="Param_11">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -14252,35 +14318,39 @@ WHERE VACCINATION_SK=?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="156.8,41.6"
+          Size="157,42"
           Id="Package\NDS_OUTBREAK"
           TopLeft="335.666666666667,59.2222222222222" />
         <NodeLayout
-          Size="124.8,41.6"
+          Size="125,42"
           Id="Package\NDS_PHU"
           TopLeft="81,105.111111111111" />
         <NodeLayout
-          Size="260.8,41.6"
+          Size="261,42"
           Id="Package\NDS_PHU_FROM_CANADA_COMPILED"
           TopLeft="19.5,273.5" />
         <NodeLayout
-          Size="233.6,41.6"
+          Size="234,42"
           Id="Package\NDS_PHU_FROM_CASE_REPORT"
           TopLeft="29,178" />
         <NodeLayout
-          Size="212.8,41.6"
+          Size="213,42"
           Id="Package\NDS_PHU_FROM_VACCINES"
           TopLeft="226.888888888889,408.333333333333" />
         <NodeLayout
-          Size="164.8,41.6"
+          Size="165,42"
           Id="Package\NDS_PHU_GROUP"
           TopLeft="683.412708423846,441.64052891383" />
         <NodeLayout
-          Size="313.6,41.6"
+          Size="322,42"
+          Id="Package\NDS_Reported Case_From_Canada_Compiled_Case"
+          TopLeft="601.777777777778,72" />
+        <NodeLayout
+          Size="314,42"
           Id="Package\NDS_Reported Case_From_Ontario_Cases_Report"
           TopLeft="612.95238051447,313.235294106922" />
         <NodeLayout
-          Size="153.6,41.6"
+          Size="154,42"
           Id="Package\NDS_VACCINES"
           TopLeft="409.777777777778,231.888888888889" />
         <EdgeLayout
@@ -14341,30 +14411,30 @@ WHERE VACCINATION_SK=?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="492.466666666667,80.0222222222222">
+          TopLeft="492.666666666667,80.2222222222222">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="109.311111111111,13.7777777777778"
+              EndConnector="109.111111111111,12.7777777777778"
               Start="0,0"
-              End="101.811111111111,13.7777777777778">
+              End="101.611111111111,12.7777777777778">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="50.6555555555555,0" />
+                    End="50.5555555555555,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="50.6555555555555,0"
-                    Point2="54.6555555555555,0"
-                    Point3="54.6555555555555,4" />
+                    Point1="50.5555555555555,0"
+                    Point2="54.5555555555555,0"
+                    Point3="54.5555555555555,4" />
                   <mssgle:LineSegment
-                    End="54.6555555555555,9.7777777777778" />
+                    End="54.5555555555555,8.7777777777778" />
                   <mssgle:CubicBezierSegment
-                    Point1="54.6555555555555,9.7777777777778"
-                    Point2="54.6555555555555,13.7777777777778"
-                    Point3="58.6555555555555,13.7777777777778" />
+                    Point1="54.5555555555555,8.7777777777778"
+                    Point2="54.5555555555555,12.7777777777778"
+                    Point3="58.5555555555555,12.7777777777778" />
                   <mssgle:LineSegment
-                    End="101.811111111111,13.7777777777778" />
+                    End="101.611111111111,12.7777777777778" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14375,18 +14445,18 @@ WHERE VACCINATION_SK=?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="766.165079146124,114.6">
+          TopLeft="766.365079146124,114">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,198.635294106922"
+              EndConnector="0,199.235294106922"
               Start="0,0"
-              End="0,191.135294106922">
+              End="0,191.735294106922">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,191.135294106922" />
+                    End="0,191.735294106922" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14487,18 +14557,18 @@ WHERE VACCINATION_SK=?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="767.782544469158,354.835294106922">
+          TopLeft="767.932544469158,355.235294106922">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,86.8052348069079"
+              EndConnector="0,86.405234806908"
               Start="0,0"
-              End="0,79.3052348069079">
+              End="0,78.905234806908">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,79.3052348069079" />
+                    End="0,78.905234806908" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14507,10 +14577,6 @@ WHERE VACCINATION_SK=?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="321.6,41.6"
-          Id="Package\NDS_Reported Case_From_Canada_Compiled_Case"
-          TopLeft="601.777777777778,73" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -14520,39 +14586,39 @@ WHERE VACCINATION_SK=?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="195.2,41.6"
+          Size="195,42"
           Id="Package\NDS_OUTBREAK\UPDATE EXISTING ROW"
           TopLeft="53.5,521" />
         <NodeLayout
-          Size="153.6,41.6"
+          Size="154,42"
           Id="Package\NDS_OUTBREAK\UPDATED DATE"
           TopLeft="44.5,445" />
         <NodeLayout
-          Size="156,41.6"
+          Size="156,42"
           Id="Package\NDS_OUTBREAK\Data Conversion"
           TopLeft="215.5,230.5" />
         <NodeLayout
-          Size="163.2,41.6"
+          Size="163,42"
           Id="Package\NDS_OUTBREAK\LOOK UP PHU_SK"
           TopLeft="243,321" />
         <NodeLayout
-          Size="150.4,41.6"
+          Size="150,42"
           Id="Package\NDS_OUTBREAK\OLE DB Source"
           TopLeft="228,48" />
         <NodeLayout
-          Size="142.4,41.6"
+          Size="142,42"
           Id="Package\NDS_OUTBREAK\INSERT ROW"
           TopLeft="625.5,519" />
         <NodeLayout
-          Size="123.2,41.6"
+          Size="123,42"
           Id="Package\NDS_OUTBREAK\ADD SOR"
           TopLeft="230,149" />
         <NodeLayout
-          Size="176.8,41.6"
+          Size="177,42"
           Id="Package\NDS_OUTBREAK\LOOKUP BREAKS_SK"
           TopLeft="258,406" />
         <NodeLayout
-          Size="235.2,41.6"
+          Size="235,42"
           Id="Package\NDS_OUTBREAK\UPDATED DATE, CREATED DATE"
           TopLeft="487.5,418" />
         <EdgeLayout
@@ -14622,7 +14688,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14656,7 +14724,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14678,7 +14748,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14712,7 +14784,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14746,7 +14820,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14902,35 +14978,35 @@ WHERE VACCINATION_SK=?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="142.4,41.6"
+          Size="142,42"
           Id="Package\NDS_PHU\INSERT ROW"
           TopLeft="441,457" />
         <NodeLayout
-          Size="164.8,41.6"
+          Size="165,42"
           Id="Package\NDS_PHU\OLE DB Command"
           TopLeft="33.1428581159942,474.02353256483" />
         <NodeLayout
-          Size="235.2,41.6"
+          Size="235,42"
           Id="Package\NDS_PHU\CREATED DATE, UPDATED DATE"
           TopLeft="391,372" />
         <NodeLayout
-          Size="163.2,41.6"
+          Size="163,42"
           Id="Package\NDS_PHU\LOOK UP PHU_SK"
           TopLeft="217,281" />
         <NodeLayout
-          Size="156,41.6"
+          Size="156,42"
           Id="Package\NDS_PHU\Data Conversion"
           TopLeft="219,188" />
         <NodeLayout
-          Size="150.4,41.6"
+          Size="150,42"
           Id="Package\NDS_PHU\OLE DB Source"
           TopLeft="183,31" />
         <NodeLayout
-          Size="120.8,41.6"
+          Size="121,42"
           Id="Package\NDS_PHU\Add SOR"
           TopLeft="191,109" />
         <NodeLayout
-          Size="153.6,41.6"
+          Size="154,42"
           Id="Package\NDS_PHU\UPDATED DATE"
           TopLeft="31,366" />
         <EdgeLayout
@@ -14952,7 +15028,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15046,7 +15124,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15080,7 +15160,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15102,7 +15184,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15124,7 +15208,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -16143,7 +16229,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16249,7 +16337,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16283,7 +16373,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16317,7 +16409,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16339,7 +16433,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -16413,43 +16509,43 @@ WHERE VACCINATION_SK=?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="169.6,41.6"
+          Size="170,42"
           Id="Package\NDS_Reported Case_From_Canada_Compiled_Case\LOOKUP Object_SK"
           TopLeft="145.071428887698,484.85882302535" />
         <NodeLayout
-          Size="142.4,41.6"
+          Size="142,42"
           Id="Package\NDS_Reported Case_From_Canada_Compiled_Case\INSERT ROW"
           TopLeft="343.85714120281,667.035293377642" />
         <NodeLayout
-          Size="153.6,41.6"
+          Size="154,42"
           Id="Package\NDS_Reported Case_From_Canada_Compiled_Case\UPDATED DATE"
           TopLeft="21.7142855561509,597.447058383816" />
         <NodeLayout
-          Size="228.8,41.6"
+          Size="229,42"
           Id="Package\NDS_Reported Case_From_Canada_Compiled_Case\Convert health_region, province"
-          TopLeft="116.285708994281,205.411764641534" />
+          TopLeft="99.2857089942812,205.411764641534" />
         <NodeLayout
-          Size="188.8,41.6"
-          Id="Package\NDS_Reported Case_From_Canada_Compiled_Case\LOOK UP PHU_SK_NDS"
-          TopLeft="133,304" />
-        <NodeLayout
-          Size="225.6,41.6"
+          Size="226,42"
           Id="Package\NDS_Reported Case_From_Canada_Compiled_Case\Source Canada_Compiled_Case"
           TopLeft="117.071427865904,48.1470591130966" />
         <NodeLayout
-          Size="198.4,41.6"
+          Size="198,42"
           Id="Package\NDS_Reported Case_From_Canada_Compiled_Case\Convert ObjectId, gender"
           TopLeft="135.571430846137,384.035298117964" />
         <NodeLayout
-          Size="120.8,41.6"
+          Size="189,42"
+          Id="Package\NDS_Reported Case_From_Canada_Compiled_Case\LOOK UP PHU_SK_NDS"
+          TopLeft="165,304" />
+        <NodeLayout
+          Size="121,42"
           Id="Package\NDS_Reported Case_From_Canada_Compiled_Case\Add SOR"
           TopLeft="167.2142856413,128.088235540786" />
         <NodeLayout
-          Size="235.2,41.6"
+          Size="235,42"
           Id="Package\NDS_Reported Case_From_Canada_Compiled_Case\CREATED DATE, UPDATED DATE"
           TopLeft="298.857141287959,598.85882302535" />
         <NodeLayout
-          Size="193.6,41.6"
+          Size="194,42"
           Id="Package\NDS_Reported Case_From_Canada_Compiled_Case\UPDATE EXISTING ROW"
           TopLeft="0.714285726449816,677.529416891118" />
         <EdgeLayout
@@ -16548,18 +16644,30 @@ WHERE VACCINATION_SK=?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\NDS_Reported Case_From_Canada_Compiled_Case.Paths[Fuzzy Lookup Output]"
-          TopLeft="231.085715423069,345.6">
+          TopLeft="259.5,346">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,38.435298117964"
+              EndConnector="-24.928569153863,38.035298117964"
               Start="0,0"
-              End="0,30.935298117964">
+              End="-24.928569153863,30.535298117964">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.935298117964" />
+                    End="0,15.017649058982" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.017649058982"
+                    Point2="0,19.017649058982"
+                    Point3="-4,19.017649058982" />
+                  <mssgle:LineSegment
+                    End="-20.928569153863,19.017649058982" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-20.928569153863,19.017649058982"
+                    Point2="-24.928569153863,19.017649058982"
+                    Point3="-24.928569153863,23.017649058982" />
+                  <mssgle:LineSegment
+                    End="-24.928569153863,30.535298117964" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -16592,18 +16700,30 @@ WHERE VACCINATION_SK=?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\NDS_Reported Case_From_Canada_Compiled_Case.Paths[Derived Column Output1]"
-          TopLeft="229.149997317791,169.688235540786">
+          TopLeft="227.6142856413,169.688235540786">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,35.723529100748"
+              EndConnector="-13.9285766470192,35.723529100748"
               Start="0,0"
-              End="0,28.223529100748">
+              End="-13.9285766470192,28.223529100748">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.223529100748" />
+                    End="0,13.861764550374" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.861764550374"
+                    Point2="0,17.861764550374"
+                    Point3="-4,17.861764550374" />
+                  <mssgle:LineSegment
+                    End="-9.92857664701924,17.861764550374" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-9.92857664701924,17.861764550374"
+                    Point2="-13.9285766470192,17.861764550374"
+                    Point3="-13.9285766470192,21.861764550374" />
+                  <mssgle:LineSegment
+                    End="-13.9285766470192,28.223529100748" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -16636,18 +16756,30 @@ WHERE VACCINATION_SK=?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\NDS_Reported Case_From_Canada_Compiled_Case.Paths[Data Conversion Output1]"
-          TopLeft="229.042854497141,247.011764641534">
+          TopLeft="213.785708994281,247.411764641534">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,56.988235358466"
+              EndConnector="45.7142910057188,56.588235358466"
               Start="0,0"
-              End="0,49.488235358466">
+              End="45.7142910057188,49.088235358466">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,49.488235358466" />
+                    End="0,24.294117679233" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.294117679233"
+                    Point2="0,28.294117679233"
+                    Point3="4,28.294117679233" />
+                  <mssgle:LineSegment
+                    End="41.7142910057188,28.294117679233" />
+                  <mssgle:CubicBezierSegment
+                    Point1="41.7142910057188,28.294117679233"
+                    Point2="45.7142910057188,28.294117679233"
+                    Point3="45.7142910057188,32.294117679233" />
+                  <mssgle:LineSegment
+                    End="45.7142910057188,49.088235358466" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -16718,20 +16850,15 @@ WHERE VACCINATION_SK=?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\NDS_Reported Case_From_Canada_Compiled_Case\LOOK UP PHU_SK_NDS">
+    design-time-name="Package\NDS_Reported Case_From_Canada_Compiled_Case\Source Canada_Compiled_Case">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\NDS_Reported Case_From_Canada_Compiled_Case\Source Canada_Compiled_Case">
+    design-time-name="Package\NDS_Reported Case_From_Canada_Compiled_Case\LOOK UP PHU_SK_NDS">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -16749,47 +16876,47 @@ WHERE VACCINATION_SK=?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="164.8,41.6"
+          Size="165,42"
           Id="Package\NDS_Reported Case_From_Ontario_Cases_Report\Lookup Object_SK"
           TopLeft="340.5,413.5" />
         <NodeLayout
-          Size="155.2,41.6"
+          Size="155,42"
           Id="Package\NDS_Reported Case_From_Ontario_Cases_Report\Convert Case_id"
           TopLeft="345.5,311.5" />
         <NodeLayout
-          Size="273.6,41.6"
+          Size="274,42"
           Id="Package\NDS_Reported Case_From_Ontario_Cases_Report\Convert Age, Gender, OutbreakRelated_1"
           TopLeft="169,617.5" />
         <NodeLayout
-          Size="263.2,41.6"
+          Size="263,42"
           Id="Package\NDS_Reported Case_From_Ontario_Cases_Report\Convert Age, Gender, OutbreakRelated"
           TopLeft="503.5,617.5" />
         <NodeLayout
-          Size="153.6,41.6"
+          Size="154,42"
           Id="Package\NDS_Reported Case_From_Ontario_Cases_Report\UPDATED DATE"
           TopLeft="558,515.5" />
         <NodeLayout
-          Size="180.8,41.6"
+          Size="181,42"
           Id="Package\NDS_Reported Case_From_Ontario_Cases_Report\Lookup PHU_SK_NDS"
           TopLeft="332.5,209.5" />
         <NodeLayout
-          Size="235.2,41.6"
+          Size="235,42"
           Id="Package\NDS_Reported Case_From_Ontario_Cases_Report\CREATED DATE, UPDATED DATE"
           TopLeft="262.5,515.5" />
         <NodeLayout
-          Size="219.2,41.6"
+          Size="219,42"
           Id="Package\NDS_Reported Case_From_Ontario_Cases_Report\Source Ontario_Cases_Report"
           TopLeft="313.5,5.5" />
         <NodeLayout
-          Size="195.2,41.6"
+          Size="195,42"
           Id="Package\NDS_Reported Case_From_Ontario_Cases_Report\UPDATE EXISTING ROW"
           TopLeft="537.5,719.5" />
         <NodeLayout
-          Size="120.8,41.6"
+          Size="121,42"
           Id="Package\NDS_Reported Case_From_Ontario_Cases_Report\Add SOR"
           TopLeft="362.5,107.5" />
         <NodeLayout
-          Size="142.4,41.6"
+          Size="142,42"
           Id="Package\NDS_Reported Case_From_Ontario_Cases_Report\INSERT ROW"
           TopLeft="235,719.5" />
         <EdgeLayout
@@ -16811,9 +16938,7 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16955,9 +17080,7 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16979,9 +17102,7 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17003,9 +17124,7 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17027,9 +17146,7 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17051,9 +17168,7 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17075,9 +17190,7 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -17222,7 +17335,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17352,7 +17467,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17386,7 +17503,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17420,7 +17539,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17454,7 +17575,9 @@ WHERE VACCINATION_SK=?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
