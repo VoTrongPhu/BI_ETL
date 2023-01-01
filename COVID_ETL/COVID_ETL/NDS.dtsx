@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package2"
   DTS:PackageType="5"
-  DTS:VersionBuild="65"
-  DTS:VersionGUID="{10DA0975-D1F2-4379-A668-B9B9972F37BE}">
+  DTS:VersionBuild="66"
+  DTS:VersionGUID="{8A271CFA-AB69-4059-8E64-8BADDCF9F3D8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -4955,7 +4955,7 @@ WHERE PHU_SK = ?</property>
                       cachedDataType="i4"
                       cachedName="PHU_SK_NDS"
                       externalMetadataColumnId="Package\NDS_PHU_FROM_CASE_REPORT\UPDATE EXISTING ROW.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
-                      lineageId="Package\NDS_PHU_FROM_CASE_REPORT\493:invalid" />
+                      lineageId="Package\NDS_PHU_FROM_CASE_REPORT\672:invalid" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -14318,39 +14318,39 @@ WHERE VACCINATION_SK=?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="157,42"
+          Size="156.8,41.6"
           Id="Package\NDS_OUTBREAK"
-          TopLeft="335.666666666667,59.2222222222222" />
+          TopLeft="404.23809640586,50.810457398368" />
         <NodeLayout
-          Size="125,42"
+          Size="124.8,41.6"
           Id="Package\NDS_PHU"
           TopLeft="81,105.111111111111" />
         <NodeLayout
-          Size="261,42"
+          Size="260.8,41.6"
           Id="Package\NDS_PHU_FROM_CANADA_COMPILED"
           TopLeft="19.5,273.5" />
         <NodeLayout
-          Size="234,42"
+          Size="233.6,41.6"
           Id="Package\NDS_PHU_FROM_CASE_REPORT"
           TopLeft="29,178" />
         <NodeLayout
-          Size="213,42"
+          Size="212.8,41.6"
           Id="Package\NDS_PHU_FROM_VACCINES"
-          TopLeft="226.888888888889,408.333333333333" />
+          TopLeft="344.746033753128,399.156862616401" />
         <NodeLayout
-          Size="165,42"
+          Size="164.8,41.6"
           Id="Package\NDS_PHU_GROUP"
-          TopLeft="683.412708423846,441.64052891383" />
+          TopLeft="718.412709019893,433.228764089976" />
         <NodeLayout
-          Size="322,42"
+          Size="321.6,41.6"
           Id="Package\NDS_Reported Case_From_Canada_Compiled_Case"
-          TopLeft="601.777777777778,72" />
+          TopLeft="643.663492477076,58.2352939246022" />
         <NodeLayout
-          Size="314,42"
+          Size="313.6,41.6"
           Id="Package\NDS_Reported Case_From_Ontario_Cases_Report"
-          TopLeft="612.95238051447,313.235294106922" />
+          TopLeft="647.238095384066,318.247058748456" />
         <NodeLayout
-          Size="154,42"
+          Size="153.6,41.6"
           Id="Package\NDS_VACCINES"
           TopLeft="409.777777777778,231.888888888889" />
         <EdgeLayout
@@ -14377,30 +14377,18 @@ WHERE VACCINATION_SK=?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="486.777777777778,231.888888888889">
+          TopLeft="484.607937091819,231.888888888889">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-72.6111111111112,-130.666666666667"
+              EndConnector="0,-139.478431490521"
               Start="0,0"
-              End="-72.6111111111112,-123.166666666667">
+              End="0,-131.978431490521">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-61.3333333333333" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-61.3333333333333"
-                    Point2="0,-65.3333333333333"
-                    Point3="-4,-65.3333333333333" />
-                  <mssgle:LineSegment
-                    End="-68.6111111111112,-65.3333333333333" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-68.6111111111112,-65.3333333333333"
-                    Point2="-72.6111111111112,-65.3333333333333"
-                    Point3="-72.6111111111112,-69.3333333333333" />
-                  <mssgle:LineSegment
-                    End="-72.6111111111112,-123.166666666667" />
+                    End="0,-131.978431490521" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14411,30 +14399,18 @@ WHERE VACCINATION_SK=?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="492.666666666667,80.2222222222222">
+          TopLeft="561.03809640586,75.3228756614851">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="109.111111111111,12.7777777777778"
+              EndConnector="82.6253960712156,0"
               Start="0,0"
-              End="101.611111111111,12.7777777777778">
+              End="75.1253960712156,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="50.5555555555555,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="50.5555555555555,0"
-                    Point2="54.5555555555555,0"
-                    Point3="54.5555555555555,4" />
-                  <mssgle:LineSegment
-                    End="54.5555555555555,8.7777777777778" />
-                  <mssgle:CubicBezierSegment
-                    Point1="54.5555555555555,8.7777777777778"
-                    Point2="54.5555555555555,12.7777777777778"
-                    Point3="58.5555555555555,12.7777777777778" />
-                  <mssgle:LineSegment
-                    End="101.611111111111,12.7777777777778" />
+                    End="75.1253960712156,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14445,18 +14421,18 @@ WHERE VACCINATION_SK=?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="766.365079146124,114">
+          TopLeft="804.250793930571,99.8352939246022">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,199.235294106922"
+              EndConnector="0,218.411764823854"
               Start="0,0"
-              End="0,191.735294106922">
+              End="0,210.911764823854">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,191.735294106922" />
+                    End="0,210.911764823854" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14489,30 +14465,30 @@ WHERE VACCINATION_SK=?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="150,315.5">
+          TopLeft="149.9,315.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="149.222222222222,92.8333333333334"
+              EndConnector="267.112700419794,84.0568626164011"
               Start="0,0"
-              End="149.222222222222,85.3333333333334">
+              End="267.112700419794,76.5568626164011">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,51.284715750233" />
+                    End="0,46.0577435581255" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,51.284715750233"
-                    Point2="0,55.284715750233"
-                    Point3="4,55.284715750233" />
+                    Point1="0,46.0577435581255"
+                    Point2="0,50.0577435581255"
+                    Point3="4,50.0577435581255" />
                   <mssgle:LineSegment
-                    End="145.222222222222,55.284715750233" />
+                    End="263.112700419794,50.0577435581255" />
                   <mssgle:CubicBezierSegment
-                    Point1="145.222222222222,55.284715750233"
-                    Point2="149.222222222222,55.284715750233"
-                    Point3="149.222222222222,59.284715750233" />
+                    Point1="263.112700419794,50.0577435581255"
+                    Point2="267.112700419794,50.0577435581255"
+                    Point3="267.112700419794,54.0577435581255" />
                   <mssgle:LineSegment
-                    End="149.222222222222,85.3333333333334" />
+                    End="267.112700419794,76.5568626164011" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14523,30 +14499,18 @@ WHERE VACCINATION_SK=?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="367.555555555556,408.333333333333">
+          TopLeft="485.928572432119,399.156862616401">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="119.222222222222,-134.444444444444"
+              EndConnector="0,-125.667973727512"
               Start="0,0"
-              End="119.222222222222,-126.944444444444">
+              End="0,-118.167973727512">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-50.3792067929999" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-50.3792067929999"
-                    Point2="0,-54.3792067929999"
-                    Point3="4,-54.3792067929999" />
-                  <mssgle:LineSegment
-                    End="115.222222222222,-54.3792067929999" />
-                  <mssgle:CubicBezierSegment
-                    Point1="115.222222222222,-54.3792067929999"
-                    Point2="119.222222222222,-54.3792067929999"
-                    Point3="119.222222222222,-58.3792067929999" />
-                  <mssgle:LineSegment
-                    End="119.222222222222,-126.944444444444" />
+                    End="0,-118.167973727512" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14557,18 +14521,18 @@ WHERE VACCINATION_SK=?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="767.932544469158,355.235294106922">
+          TopLeft="802.425402201979,359.847058748456">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,86.405234806908"
+              EndConnector="0,73.3817053415198"
               Start="0,0"
-              End="0,78.905234806908">
+              End="0,65.8817053415198">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,78.905234806908" />
+                    End="0,65.8817053415198" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -16850,14 +16814,6 @@ WHERE VACCINATION_SK=?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\NDS_Reported Case_From_Canada_Compiled_Case\Source Canada_Compiled_Case">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\NDS_Reported Case_From_Canada_Compiled_Case\LOOK UP PHU_SK_NDS">
     <Properties>
       <Property>
@@ -16867,6 +16823,14 @@ WHERE VACCINATION_SK=?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\NDS_Reported Case_From_Canada_Compiled_Case\Source Canada_Compiled_Case">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -17220,6 +17184,14 @@ WHERE VACCINATION_SK=?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\NDS_Reported Case_From_Ontario_Cases_Report\Source Ontario_Cases_Report">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\NDS_Reported Case_From_Ontario_Cases_Report\Lookup PHU_SK_NDS">
     <Properties>
       <Property>
@@ -17237,14 +17209,6 @@ WHERE VACCINATION_SK=?</property>
         <Value
           type="q4:string">0</Value>
       </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\NDS_Reported Case_From_Ontario_Cases_Report\Source Ontario_Cases_Report">
-    <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
